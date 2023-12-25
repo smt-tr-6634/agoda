@@ -465,6 +465,163 @@ body {
   box-shadow: 0 1px 6px 2px rgba(0,0,0,.2);
 }
 
+/* meriç css başlangıç */
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    max-width: 50%;
+}
+#r1 img {
+    width: 85%;
+    position: relative;
+    top: 30px;
+    margin-left: 20%;
+}
+
+#r1 img:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+
+#fotolar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    height: 100%;
+}
+
+#fotolar #ucresim {
+    display: flex;
+    height: 30%;
+    width: 60%;
+}
+
+#fotolar img {
+    width: 100%;
+    height: 15%;
+    margin: 10px;
+    position: relative;
+    top: 20px;
+}
+
+#ucresim img:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+
+#ucresim1 {
+    display: flex;
+    width: 60%;
+    height: 30%;
+}
+
+#ucresim1 img:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+
+/* kısanavbar */
+/* #kısanav {
+    border: 1px solid rgba(0, 0, 0, 0.041);
+    border-radius: 6px;
+    position: relative;
+    top: 18px;
+    width: 83%;
+    height: 85%;
+    margin-left: 83px;
+} */
+
+/* #kısanav a:hover {
+    color: blue;
+    border-bottom: 4px solid blue;
+} */
+
+/* birinci card kısmı */
+/* .card {
+    width: 91%;
+    margin-left: 78px;
+    position: relative;
+    top: 28px;
+}
+
+.card i {
+    position: relative;
+    bottom: 3px;
+    font-size: 14px;
+    color: orangered;
+} */
+
+/* çizgi */
+/* .cizgi {
+    border-bottom: 3px solid rgba(42, 41, 41, 0.233);
+    width: 95%;
+    margin-left: 15px;
+}
+.cizgi2 {
+    border-bottom: 3px solid rgba(42, 41, 41, 0.233);
+    width: 95%;
+    margin-left: 6px;
+    position: relative;
+    top: -3px;
+}
+.cizgi3{
+    border-bottom: 3px solid rgba(42, 41, 41, 0.233);
+    width: 84%;
+    margin-left: 81px;
+    position: relative;
+    bottom: 498px;
+} */
+
+/* ikinci kart kısmı */
+/* #wifi {
+    color: rgb(30, 135, 79);
+    font-size: 25px;
+}
+
+#fan {
+    color: rgb(30, 135, 79);
+    font-size: 25px;
+} */
+
+/* üçüncü kart kısmı */
+/* .dataname1 {
+    display: flex;
+    width: 70%;
+} */
+
+/* sağ ikinci kart yapı */
+/* #button a{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    color: black;
+    position: relative;
+    top: -27px;
+    font-family: cursive;
+    text-decoration: none;
+} */
+
+/* simgesel yapılar */
+/* .simgesel1{
+    font-size: 13px;
+    position: relative;
+    top: 8px;
+}
+.simgesel2{
+    display: flex;
+    justify-content: space-between;
+    width: 49%;
+    position: relative;
+    font-size: 12px
+} */
+
+
+/* tesisler ve olanaklar hover */
+
+/* meriç css bitiş */
 
 
 @media (max-width: 1020px) {
