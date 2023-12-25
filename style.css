@@ -1,0 +1,477 @@
+:root {
+  --textcolor: rgb(42, 42, 46);
+  --text-hovercolor: rgb(83, 146, 249);
+  --iconcolor: #333;
+  --backroundblue: #20274d;
+  --text-detail-color: #737373;
+  --acordion-color:#ececec;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 5000vh;
+}
+/* navbar */
+.navbar-nav .nav-item a {
+  color: var(--textcolor);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0px;
+  margin-left: 15px;
+}
+.nav-item {
+  align-self: center;
+}
+.navbar-nav .nav-item a:hover {
+  color: var(--text-hovercolor);
+  font-weight: 700;
+}
+
+.icondrop {
+  background-color: white;
+  border: none;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-toggle {
+  padding: 0%;
+}
+
+.icondrop a {
+  font-size: 26px;
+  color: var(--textcolor);
+}
+.icondrop a:hover {
+  color: var(--text-hovercolor);
+}
+.icondrop:hover .icondrop-menu {
+  display: block;
+}
+
+.icondrop-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.icondrop-menu a {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/***************** section1 **************************/
+.section1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/1_14932_02.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  color: white;
+}
+.row-search {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+.row-no-padding {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row-no-padding [class^="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.row-search .dropdown .btn {
+  background-color: white;
+  padding: 1rem;
+  color: var(--textcolor);
+  font-weight: 600;
+  font-size: 15px;
+}
+.vertical-line {
+  border: 0;
+  border-left: 1px solid #000; /* Çizgi rengi */
+  height: 100%;
+  margin: 0 10px; /* İki öğe arasındaki boşluğu ayarlamak için */
+}
+
+.btn-with-line {
+  display: flex;
+  align-items: center;
+}
+
+.custom-divider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.custom-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid #000; /* Çizgi rengi ve kalınlığı */
+  transform: translateX(-50%);
+}
+
+/* dropdonw menü */
+.dropdown-menu-item {
+  padding: 0%;
+  overflow: hidden;
+}
+.dropdown-menu-item a {
+  color: var(--textcolor);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px;
+}
+.dropdown-menu-item a:hover {
+  color: white;
+  background-color: var(--text-hovercolor);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px;
+}
+.dropdown-menu-item a:hover + .fa-solid {
+  color: white;
+}
+/***************** section1 finish **************************/
+
+/* sticky       */
+
+.fixed-top {
+  top: -100px;
+  transition: 0.5s;
+  background-color: var(--backroundblue);
+}
+/***************** section2  **************************/
+/* card */
+.section2 .card .card-image {
+  padding: 0%;
+  padding: 15px 40px;
+}
+.card div label {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--textcolor);
+}
+.card h6 {
+  color: var(--textcolor);
+  font-weight: 700;
+}
+.img-col {
+  padding: 1px;
+  overflow: hidden;
+}
+
+.img-fluid {
+  padding: 1px;
+}
+
+.col-img {
+  padding: 0%;
+  padding: 1px;
+}
+.Evaluation {
+  border-left: 1px solid gray;
+}
+.resim-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resim-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.resim-container .col-img {
+  position: relative;
+}
+
+.resim-container .col-img:last-child::after {
+  position: absolute;
+  content: "Tümünü Gör";
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.card-title a {
+  color: var(--textcolor);
+  text-decoration: none;
+  font-weight: 700;
+}
+.card-title a:hover {
+  text-decoration: underline;
+}
+.card-text a {
+  font-size: 14px;
+}
+
+.card-evaluation {
+  border-left: 1px solid gray;
+}
+.card-evaluation h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.card-evaluation p {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-detail-color);
+}
+
+.evaluation .card-text h5 {
+  font-weight: 700;
+}
+.evaluation .card-text p {
+  padding: 0%;
+  font-size: 11px;
+}
+
+.tooltips {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+.tooltips .tooltiptext {
+  visibility: hidden;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+}
+
+.tooltips:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltips .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 10%;
+
+  border-width: 8px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  transform: translateX(-50%);
+}
+.tooltips p {
+  font-size: 12px;
+  padding: 0%;
+  margin: 0%;
+  color: var(--textcolor);
+  font-weight: 700;
+}
+.tooltips ul {
+  padding: 0%;
+  margin: 0%;
+}
+.tooltips ul li {
+  list-style: none;
+  color: var(--textcolor);
+  font-size: 10px;
+  margin: 1px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.cards .active {
+  background-color: var(--text-hovercolor);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+.cards button {
+  font-weight: 600;
+  color: var(--textcolor);
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  background-color: white;
+}
+.cards button:hover {
+  background-color: var(--text-hovercolor);
+  color: white;
+  border: none;
+}
+
+/* section3************************ */
+.otel-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: var(--text-detail-color);
+}
+
+.otel-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.grey-background {
+  background-color: #f2f2f2;
+}
+
+.location a:first-child {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.location a:last-child {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--textcolor);
+  font-weight: 600;
+}
+.section4 .card{
+ 
+    border: none;
+}
+.section4 .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border: none;
+}
+.section4 .card .card-body a{
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+}
+.section4 .card .card-body a:hover{
+  text-decoration: underline;
+ 
+}
+.section4 .card .card-body p{
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--textcolor);
+
+  
+}
+
+
+
+/* owl courosel ileri geri butonu */
+.customBtn{
+  background-color: white;
+  border: 1px solid var(--text-hovercolor);
+  border-radius: 50%;
+ margin-top: 12rem;
+}
+
+
+/* section5**** */
+
+
+/* acordion yapısı */
+
+
+.acordion{
+  border-left: 5px solid var(--text-hovercolor);
+  background-color: var(--acordion-color);
+  padding: 1rem;
+  transition: ease 0.5s;
+  cursor: pointer;
+}
+.acordion i{
+  transform: rotate(180deg);
+  transition: ease 0.5s;
+
+}
+.acordion .i-active{
+  transform: rotate(0deg);
+  transition: ease 0.5s;
+  color: white;
+
+}
+.acordion p{
+  margin: 0%;
+  padding: 0%;
+  font-weight: 500;
+  font-size: 13px;
+}
+.acordion-active{
+  background-color: var(--text-hovercolor);
+  transition: ease 1s;
+  color: white;
+}
+.acordion-content{
+  display: none;
+  padding: 1rem;
+  background-color: var(--acordion-color);
+  
+  
+}
+
+/* section6 */
+
+.section6 .card .card-title{
+  font-weight: 500;
+  color: var(--textcolor);
+  font-size: 16px;
+}
+.section6 .card .card-text{
+  font-weight: 400;
+  color: var(--text-detail-color);
+  font-size: 14px;
+}
+
+.section6 .card:hover{
+  border: none;
+  box-shadow: 0 1px 6px 2px rgba(0,0,0,.2);
+}
+
+
+
+@media (max-width: 1020px) {
+  .fixed-top {
+    display: none;
+  }
+  .Evaluation {
+    border: none;
+  }
+}
