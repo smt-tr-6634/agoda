@@ -201,3 +201,23 @@ $(".div-login a").click(function (e) {
   $(this).addClass("a-active");
 });
 
+
+
+// profile sayfası
+$(".profile-edit-name").hide();
+$(".edit").click(function (e) { 
+  e.preventDefault();
+  $(".profile-edit-name").slideDown();
+  $(".edit").hide();
+  $(".div2").hide();
+  $(".profilecard").css("background", "#b5d2ff");
+  
+});
+ $(".close").click(function (e) { 
+  e.preventDefault();
+  $(".profile-edit-name").slideUp();
+  $(".edit").show();
+  $(".div2").show();
+  $(".profilecard").css("background", "white");
+
+ });

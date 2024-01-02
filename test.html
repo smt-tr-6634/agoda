@@ -1,3 +1,5 @@
+<!-- test sayfasıdır yapılar burada test ediliyor -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,28 +39,219 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <style>
-    .imgcard{
-        position: absolute;
-       
-        bottom: 0px;
+    .imgs{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      
     }
-    .imgcard .card-title{
-     margin-top: 50%;
-     color: red;
-     background-color: black;
-       
-       
+    .imgs .img-div {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    img{
+      padding: 1px;
+    }
+    .img-div{
+      position: relative;
+      overflow: hidden;
+    }
+    .imgs .img-div:last-child::before {
+      content: "Tümünü Gör";
+      position: absolute;
+      color: white;
+      background-color: black;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 30%;
+      padding-left: 2%;
+      padding-right: 2%;
+      cursor: pointer;
+    }
+   
+    .cardss{
+      border: 1px solid red;
+    }
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      margin-top: 150px;
+      position: relative;
+      border-left: 15px solid yellow;
+      
+    }
+
+    .box::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 15px;
+      background-color: yellow;
+    }
+
+    .box::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 15px;
+      background-color: yellow;
+    }
+    .drop {
+      position: relative;
+      display: inline-block;
+    }
+
+    .drop ul {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #dc3545;
+    }
+
+    .drp:hover ul {
+      max-height: 1000px; /* veya istediğiniz bir değer */
+      transition: max-height 0.3s ease-in;
+    }
+
+    .drop-item {
+      padding: 10px;
+      color: white;
     }
   </style>
   </head>
   <body>
-    <div class="card text-bg-dark" style="position: relative;">
-        <img src="img/1_14932_02.jpg" class="card-img" alt="...">
-        <div class="card-img-overlay imgcard" >
-          <!-- Resim Overlay içeriği -->
-          <h5 class="card-title" style="margin-bottom: 0;">Card title</h5>
+   <div class="container">
+    <div class="row">
+      <div class="col-2 d-lg-block d-none"></div>
+      <div class="col-lg-10 col-12 mt-5">
+        <div class="card" >
+           <div class="row m-0">
+          <div class="col-lg-4 col-12  p-0  ">
+            <div class="imgss rounded-2 overflow-hidden  p-3">
+              <img src="img/abdulsamet/city/149622879.jpg" class="w-100" alt="" style="max-width: 100%;">
+              <div class="imgs  " >
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+                <div class="img-div"> <img src="img/abdulsamet/city/127865169.jpg" alt="" style="max-width: 100%; height: 100%;"></div>
+               
+              
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-lg-5 col-md-6 col-12 text-center  p-0 p-3 ">
+            <h5 class="card-title   "><a href="">Cityloft 161</a></h5>
+            <p class="card-text">
+              <a href=""
+                ><i class="fa-sharp fa-solid fa-location-dot me-1"></i
+                >Ataşehir,İstanbul-Haritada Görüntüle
+              </a>
+            </p>
+            <p class="card-text">
+              <div class="tooltips w-100 ">
+                <ul class="d-flex justify-content-center">
+                  <li>Havaalanı transferi</li>
+                  <li>Ücretsiz Wifi</li>
+                  <li>+6</li>
+                </ul>
+                <div class="tooltiptext"> 
+                  <div class="row    ">
+                    <div class="col-6 text-start">
+                      <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Hava alanı transferi
+                    </div>
+                    <div class="col-6  text-start">
+                      <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Bavul hizmeti
+                    </div>
+                    <div class="col-6 text-start">
+                      <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>24 saat resepsiyon
+                    </div>
+                    <div class="col-6 text-start">
+                      <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Her odada ücretsiz wifi
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </p>
+            <div id="yorum">
+              <p id="yorumMetni" class="yorumMetni">
+                "HER NE KADAR KISA BİR SÜRELİĞİNE KALMIŞ OLSAM DA, SON DERECE MEMNUN OLDUM
+                HER NE KADAR KISA BİR SÜRELİĞİNE KALMIŞ OLSAM DA, SON DERECE MEMNUN OLDUM"
+              </p>
+              <a href="#" class="toggleButton toggleButton  " >Daha Fazla Göster</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12   p-0  border-start  d-flex flex-column">
+            <div class="div1 text-end  ">
+              <div class="evaluation d-flex justify-content-end   p-3  ">
+                <div class=" card-text text-start">
+                  <h5 class="">Çok iyi</h5>
+                  <p>123 Değerlendirme</p>
+                </div>
+                <svg class="ms-4"  width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 jUloin Box-sc-kv6pi1-0 cjESZE" style="transform: none;">
+                  <path d="M1.199 3.053H21.99a1.5 1.5 0 0 1 1.5 1.5v14.983a1.5 1.5 0 0 1-1.5 1.5H4.53a1.5 1.5 0 0 1-1.5-1.5V8.333a.5.5 0 0 0-.1-.3L.399 4.653a1 1 0 0 1 .8-1.6zm0 1l2.53 3.381c.195.26.3.575.3.9v11.202a.5.5 0 0 0 .5.5H21.99a.5.5 0 0 0 .5-.5V4.553a.5.5 0 0 0-.5-.5H1.2z"></path> 
+                  <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 8px;">1.2</text>
+                </svg>
+              </div>
+            </div>
+          
+            <div class="div2 w-100 mt-auto text-end  p-3">
+              <p class="fs-6 fw-bold" >Gecelik Ortalama Fiyat</p>
+              <p class="text-danger fw-bold" ><span>1379 Tl</span></p>
+              <button class="btn btn-primary"  >Müsaitlik Durumunu Kontrol Et</button>
+            </div>
         </div>
+   
+       </div>
+        </div>
+       
       </div>
+    </div>
+     
+     <div class="card  mt-5 pt-5">
+      <div class="row  m-0 border">
+        <div class="col-4">1</div>
+        <div class="col-4">2</div>
+        <div class="col-4">3</div>
+      </div>
+     </div>
+
+    <div class="box">
+
+    </div>
+
+
+    <div class="drop mt-5">
+    
+      <ul class="drop bg-danger ">
+        <a href="drp">drp</a>
+        <li  class="drop-item" >drop</li>
+        <li  class="drop-item" >drop</li>
+        <li  class="drop-item" >drop</li>
+        <li  class="drop-item" >drop</li>
+        <li  class="drop-item" >drop</li>
+      </ul>
+
+    </div>
+
+   </div>
 
     <!-- jquery cdn -->
     <script
