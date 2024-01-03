@@ -1556,17 +1556,17 @@
       $(document).ready(function() {
         // Sayfa tamamen yüklendiğinde loader'ı gizle
         $(window).on("load", function() {
-          $("#loader").fadeOut(1000);
+          $("#loader").fadeOut("slow");
         });
     
         // Sayfa yüklenirken loader'ı görünür kıl
         $(document).ajaxStart(function() {
-          $("#loader").fadeIn(1000);
+          $("#loader").fadeIn("slow");
         });
     
         // Sayfa yüklendikten sonra loader'ı gizle
         $(document).ajaxStop(function() {
-          $("#loader").fadeOut(1000);
+          $("#loader").fadeOut("slow");
         });
       });
       
