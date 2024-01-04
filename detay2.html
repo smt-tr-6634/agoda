@@ -11,6 +11,7 @@
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/af0889dc48.js" crossorigin="anonymous"></script>
   <!-- css bağlantı -->
+  <link rel="stylesheet" href="./style.css">
 
   <style>
     img {
@@ -96,7 +97,7 @@
     }
 
     .cards:hover {
-      background-color: rgba(247, 255, 1, 0.755);
+      background-color: rgba(207, 207, 188, 0.755);
 
     }
 
@@ -115,6 +116,70 @@
 
     .simgeselyapi {
       font-family: monospace;
+      color: black;
+    }
+
+    .borders {
+      border: 1px solid black;
+      border-radius: 10px;
+      align-items: center;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.685);
+      color: rgb(255, 255, 255);
+    }
+
+    .borders:hover {
+      background-color: rgb(41, 12, 208);
+    }
+
+    .borders2 {
+      border: 1px solid black;
+      border-radius: 10px;
+      align-items: center;
+      height: 30px;
+      width: 100px;
+      background: rgb(7, 186, 210);
+      color: white;
+    }
+
+    .kusursuz {
+      font-size: 2rem;
+      font-family: inherit;
+    }
+
+    .kusursuz2 {
+      font-family: inherit;
+    }
+
+    img:hover {
+      filter: brightness(0.5);
+      transition: 0.5s;
+    }
+    #listeler{
+      display: flex;
+    }
+    #listeler li{
+      list-style: none;
+    }
+    #listeler li img{
+      width: 100%;
+      height: 80%;
+    }
+    .resimüstü{
+      position: relative;
+      bottom: 27px;
+      color: white;
+      left: 7px;
+    }
+    .liste ul li{
+      list-style: none;
+      color: grey;
+    }
+    ul{
+      position: relative; right: 31px;
+    }
+    .tesiscard:hover{
+      background-color: rgb(61, 204, 142);
     }
   </style>
 </head>
@@ -122,81 +187,35 @@
 <body>
 
   <div class="container">
-    <!-- <div class="row">
-                <div class="col-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/meric/img/2012165_17022417410051236928 (1).jpg" class="card-img-top" alt="...">
-                      </div>
-                </div>
-
-
-                <div class="col-8">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="img/meric/img/2012165_17022713240051266236 (1).jpg" class="card-img-top" alt="...">
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="img/meric/img/2012165_17022417410051236930.jpg" class="card-img-top" alt="...">
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="img/meric/img/2012165_17062415180054056309.jpg" class="card-img-top" alt="...">
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="card h-100 w-100">
-                            <img src="img/meric/img/2012165_17022713290051266446 (1).jpg" class="card-img-top" alt="...">
-                          </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card h-100">
-                              <img src="img/meric/img/2012165_17022713360051266720.jpg" class="card-img-top" alt="...">
-                            </div>
-                          </div>
-
-                          <div class="col">
-                            <div class="card h-100 w-100">
-                              <img src="img/meric/img/a78e13bc52e7e3f3338c64444bd49d98.jpg" class="card-img-top" alt="...">
-                            </div>
-                          </div>
-                      </div>
-                </div>
-            </div> -->
 
     <div class="row">
       <div class="col-lg-4 col-12 p-0">
-    
-        <img src="img/meric/img/2012165_17022417410051236928 (1).jpg" class=" img-fluid h-auto w-100" alt="">
+        <img src="img/2012165_17022417410051236928 (1).jpg" class=" img-fluid h-auto w-100" alt="">
       </div>
       <div class="col-lg-8 col-12 p-0 ps-2 ">
         <div class="row ">
           <div class="col-4 p-0  ">
-            <img src="img/meric/img/2012165_17022713240051266236 (1).jpg" class="img-fluid h-100" alt="">
+            <img src="img/2012165_17022713240051266236 (1).jpg" class="img-fluid h-100" alt="">
 
           </div>
           <div class="col-4  p-0  ">
-            <img src="img/meric/img/2012165_17022417410051236930.jpg" class="img-fluid h-100" alt="">
+            <img src="img/2012165_17022417410051236930.jpg" class="img-fluid h-100" alt="">
 
           </div>
           <div class="col-4  p-0 ">
-            <img src="img/meric/img/2012165_17062415180054056309.jpg" class="img-fluid h-100" alt="">
+            <img src="img/2012165_17062415180054056309.jpg" class="img-fluid h-100" alt="">
 
           </div>
           <div class="col-4  p-0  ">
-            <img src="img/meric/img/2012165_17022713290051266446 (1).jpg" class="img-fluid h-100" alt="">
+            <img src="img/2012165_17022713290051266446 (1).jpg" class="img-fluid h-100" alt="">
 
           </div>
           <div class="col-4  p-0  ">
-            <img src="img/meric/img/2012165_17022713360051266720.jpg" class="img-fluid h-100" alt="">
+            <img src="img/2012165_17022713360051266720.jpg" class="img-fluid h-100" alt="">
 
           </div>
           <div class="col-4  p-0 ">
-            <img src="img/meric/img/a78e13bc52e7e3f3338c64444bd49d98.jpg" class="img-fluid h-100" alt="">
+            <img src="img/a78e13bc52e7e3f3338c64444bd49d98.jpg" class="img-fluid h-100" alt="">
 
           </div>
 
@@ -217,7 +236,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav nav">
 
-                <li class="nav-item">
+                <li class="nav-item ms-4">
                   <a class="nav-link text-primary" href="#">Genel Bakış</a>
                 </li>
                 <li class="nav-item">
@@ -699,7 +718,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/2012165_17022713420051267078.jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/2012165_17022713420051267078.jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -721,7 +740,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/72849040.jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/72849040.jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -744,7 +763,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/2012165_17022713290051266446 (1).jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/2012165_17022713290051266446 (1).jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -767,7 +786,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/b248587b92e0974e735e47a03e977495.jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/b248587b92e0974e735e47a03e977495.jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -791,7 +810,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/2012165_17022713360051266720.jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/2012165_17022713360051266720.jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -814,7 +833,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="img/meric/img/2012165_18110520180069436660.jpg" class="img-fluid rounded-start h-100" alt="...">
+              <img src="./img/2012165_18110520180069436660.jpg" class="img-fluid rounded-start h-100" alt="...">
               <p class="fotolarıgör"><i class="fa-solid fa-camera ms-1 me-1"></i>Fotoğrafları ve bilgileri gör</p>
             </div>
             <div class="col-md-8">
@@ -999,7 +1018,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="card mb-3">
-          <img src="img/meric/img/2012165_17022417410051236930.jpg " class="card-img-top " height="300" alt="...">
+          <img src="./img/2012165_17022417410051236930.jpg " class="card-img-top " height="300" alt="...">
           <div class="card-body">
             <h5 class="card-title">Cityloft 81</h5>
 
@@ -1075,19 +1094,19 @@
               </p>
 
 
-              <div class="row p-3 bg-info">
+              <div class="row p-3 bg-success">
                 <div class="col-lg-6  text-center  cards">
-                  <i class="fa-solid fa-broom"></i>
-                  <p class=" m-0 ">kat hizmetleri</p>
-                  <p class="kat1 ">İlgili değerlendirmeleri okuyun</p>
-                  <p class="kat ">3yorum</p>
+                  <i class="fa-solid fa-broom text-light"></i>
+                  <p class=" m-0 text-light">kat hizmetleri</p>
+                  <p class="kat1 text-light">İlgili değerlendirmeleri okuyun</p>
+                  <p class="kat text-light">3yorum</p>
                 </div>
 
                 <div class="col-lg-6  text-center cards">
-                  <i class="fa-solid fa-utensils"></i>
-                  <p class=" m-0 ">Yeme İçme</p>
-                  <p class="kat">3 yorum</p>
-                  <p class="kat1">İlgili değerlendirmeleri okuyun</p>
+                  <i class="fa-solid fa-utensils text-light"></i>
+                  <p class=" m-0  text-light">Yeme İçme</p>
+                  <p class="kat text-light">3 yorum</p>
+                  <p class="kat1 text-light">İlgili değerlendirmeleri okuyun</p>
                 </div>
               </div>
 
@@ -1098,90 +1117,91 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-success">
                       Konuşulan diller
-                      <p class="m-0">Türkçe</p>
-                      <p class="m-0">İngilizce</p>
-                      <p class="m-0">Almanca</p>
+                      <p class="m-0 text-dark">Türkçe</p>
+                      <p class="m-0 text-dark">İngilizce</p>
+                      <p class="m-0 text-dark">Almanca</p>
                     </div>
 
 
 
-                    <div class="col-lg-12 mt-3">
+                    <div class="col-lg-12 mt-3 text-success">
                       Engelli erişimine uygunluk
-                      <p class="m-0"><i class="fa-solid fa-wheelchair me-2"></i>Tekerlekli sandayleyle girişe uygun</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-wheelchair me-2 text-dark"></i>Tekerlekli sandayleyle girişe uygun</p>
                     </div>
 
 
 
-                    <div class="col-lg-12  mt-3">
+                    <div class="col-lg-12  mt-3 text-success">
                       İnternet erişimi
-                      <p class="m-0"><i class="fa-solid fa-wifi me-2"></i>Her odada ücretsiz Wi-Fi</p>
-                      <p class="m-0"><i class="fa-solid fa-wifi me-2"></i>Internet services</p>
-                      <p class="m-0"><i class="fa-solid fa-wifi me-2"></i>İnternet</p>
-                      <p class="m-0"><i class="fa-solid fa-wifi me-2"></i>Ortak alanlarda Wi-Fi</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-wifi me-2 text-dark"></i>Her odada ücretsiz Wi-Fi</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-wifi me-2 text-dark"></i>Internet services</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-wifi me-2 text-dark"></i>İnternet</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-wifi me-2 text-dark"></i>Ortak alanlarda Wi-Fi</p>
                     </div>
 
-                    <div class="col-lg-12 mt-3">
+                    <div class="col-lg-12 mt-3 text-success">
                       Yapılabilecekler, rahatlamanın yolları
 
-                      <p class="m-0"><i class="fa-solid fa-spa me-2"></i>Masaj</p>
-                      <p class="m-0"><i class="fa-solid fa-spa me-2"></i>Sauna</p>
-                      <p class="m-0"><i class="fa-solid fa-spa me-2"></i>Spa</p>
-                      <p class="m-0"><i class="fa-solid fa-spa me-2"></i>Spa/sauna
+                      <p class="m-0 text-dark"><i class="fa-solid fa-spa me-2 text-dark"></i>Masaj</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-spa me-2 text-dark"></i>Sauna</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-spa me-2 text-dark"></i>Spa</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-spa me-2 text-dark"></i>Spa/sauna
                       </p>
                     </div>
 
-                    <div class="col-lg-12 mt-3">
+                    <div class="col-lg-12 mt-3 text-success">
                       Temizlik ve güvenlik
 
 
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Bezhotovostní platby</p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>En az 1 metre sosyal mesafe
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Bezhotovostní platby</p>
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>En az 1 metre sosyal mesafe
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Free face masks
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Free face masks
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Güvenlik protokolü konusunda eğitimli
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Güvenlik protokolü konusunda eğitimli
                         personel
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>her gün dezenfeksiyon işlemi
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>her gün dezenfeksiyon işlemi
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>ilk yardım seti
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>ilk yardım seti
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Konaklamalar arasında odalar sterilize edilir
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Konaklamalar arasında odalar sterilize edilir
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Mutfak ve yemek takımları dezenfekte
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Mutfak ve yemek takımları dezenfekte
                         edilmiştir
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Odanızın sterilize edilmemesini tercih
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Odanızın sterilize edilmemesini tercih
                         edebilirsiniz
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Ortak alanlarda koruyucu paravanlar
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Ortak alanlarda koruyucu paravanlar
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Ortak kullanılan kırtasiye malzemeleri
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Ortak kullanılan kırtasiye malzemeleri
                         kaldırılmıştır
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Personelde yüz koruyucu siperlikler
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Personelde yüz koruyucu siperlikler
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Sıcak suyla nevresim ve çamaşır yıkama
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Sıcak suyla nevresim ve çamaşır yıkama
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Tüm odalarda her gün dezenfeksiyon işlemi
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Tüm odalarda her gün dezenfeksiyon işlemi
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>vücut termometresi
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>vücut termometresi
                       </p>
-                      <p class="m-0"><i class="fa-solid fa-check me-2"></i>Yemeklerde güvenli oturma düzeni
+                      <p class="m-0 text-dark"><i class="fa-solid fa-check me-2 text-dark"></i>Yemeklerde güvenli oturma düzeni
                       </p>
                     </div>
 
-                    <div class="col-lg-12 mt-5">
+                    <div class="col-lg-12 mt-5 text-success">
                       Yeme içme
                       <div class="cizgi w-100 mt-3"></div>
+
                       <p class="m-0 text-danger">Tesisteki restoranlar
                       </p>
-                      <p class="m-0 mt-2">Benjamin Terrace
+                      <p class="m-0 mt-2 text-dark">Benjamin Terrace
                       </p>
-                      <p class="m-0 mt-2">Mutfak: Uluslararası</p>
-                      <p class="m-0 mt-1">Menü: Büfe, A la carte
+                      <p class="m-0 mt-2 text-dark">Mutfak: Uluslararası</p>
+                      <p class="m-0 mt-1 text-dark">Menü: Büfe, A la carte
                       </p>
                     </div>
 
@@ -1191,82 +1211,82 @@
                 </div>
 
 
-                <div class="col-lg-3 yazilar">
+                <div class="col-lg-3 yazilar text-success">
                   <div class="row">
 
 
                     <div class="col-lg-12 ">
                       Yeme-içme ve atıştırmalıklar
 
-                      <p class="m-0">Açık büfe kahvaltı
+                      <p class="m-0 text-dark">Açık büfe kahvaltı
                       </p>
-                      <p class="m-0">Bar</p>
-                      <p class="m-0">Helal restoran
+                      <p class="m-0 text-dark">Bar</p>
+                      <p class="m-0 text-dark">Helal restoran
                       </p>
-                      <p class="m-0">Kahveci</p>
-                      <p class="m-0">Kontinental kahvaltı
+                      <p class="m-0 text-dark">Kahveci</p>
+                      <p class="m-0 text-dark">Kontinental kahvaltı
                       </p>
-                      <p class="m-0">Oda servisi [24 saat]
+                      <p class="m-0 text-dark">Oda servisi [24 saat]
                       </p>
-                      <p class="m-0">Restoran</p>
+                      <p class="m-0 text-dark">Restoran</p>
 
                     </div>
 
 
 
-                    <div class="col-lg-12 mt-3">
+                    <div class="col-lg-12 mt-3 text-success">
                       Hizmet ve tesis
 
-                      <p class="m-0">Air conditioning in public area</p>
-                      <p class="m-0">Asansör</p>
-                      <p class="m-0">Bavul emaneti
+                      <p class="m-0 text-dark">Air conditioning in public area</p>
+                      <p class="m-0 text-dark">Asansör</p>
+                      <p class="m-0 text-dark">Bavul emaneti
                       </p>
-                      <p class="m-0">Çalışma alanında faks/fotokopi
+                      <p class="m-0 text-dark">Çalışma alanında faks/fotokopi
                       </p>
-                      <p class="m-0">Çamaşır yıkama hizmeti
+                      <p class="m-0 text-dark">Çamaşır yıkama hizmeti
                       </p>
-                      <p class="m-0">Döviz bürosu
+                      <p class="m-0 text-dark">Döviz bürosu
                       </p>
-                      <p class="m-0">Emanet kasası
+                      <p class="m-0 text-dark">Emanet kasası
                       </p>
-                      <p class="m-0">Engelli konuklara uygun olanaklar
+                      <p class="m-0 text-dark">Engelli konuklara uygun olanaklar
                       </p>
-                      <p class="m-0">Grooming service
+                      <p class="m-0 text-dark">Grooming service
                       </p>
-                      <p class="m-0">Günlük oda servisi
+                      <p class="m-0 text-dark">Günlük oda servisi
                       </p>
-                      <p class="m-0">Güzellik salonu
+                      <p class="m-0 text-dark">Güzellik salonu
                       </p>
-                      <p class="m-0">Heating in public area
+                      <p class="m-0 text-dark">Heating in public area
                       </p>
-                      <p class="m-0">Hediyelik eşya mağazası
+                      <p class="m-0 text-dark">Hediyelik eşya mağazası
                       </p>
-                      <p class="m-0">Invoice provided
+                      <p class="m-0 text-dark">Invoice provided
                       </p>
-                      <p class="m-0">Ironing service
+                      <p class="m-0 text-dark">Ironing service
                       </p>
-                      <p class="m-0">Kapı görevlisi
+                      <p class="m-0 text-dark">Kapı görevlisi
                       </p>
-                      <p class="m-0">Konsiyerj</p>
-                      <p class="m-0">Kuru temizleme
+                      <p class="m-0 text-dark">Konsiyerj</p>
+                      <p class="m-0 text-dark">Kuru temizleme
                       </p>
-                      <p class="m-0">Kütüphane</p>
-                      <p class="m-0">Meeting/banquet facilities
+                      <p class="m-0 text-dark">Kütüphane</p>
+                      <p class="m-0 text-dark">Meeting/banquet facilities
                       </p>
-                      <p class="m-0">Sigara içilen alan
+                      <p class="m-0 text-dark">Sigara içilen alan
                       </p>
-                      <p class="m-0">Şömine
+                      <p class="m-0 text-dark">Şömine
                       </p>
-                      <p class="m-0">Temassız check-in/out
+                      <p class="m-0 text-dark">Temassız check-in/out
                       </p>
-                      <p class="m-0">Terrace</p>
+                      <p class="m-0 text-dark">Terrace</p>
                     </div>
 
 
 
-                    <div class="col-lg-12  mt-3">
+                    <div class="col-lg-12  mt-3 text-success">
                       Çocuklar için
-                      <p class="m-0">Aile odası</p>
+                      <p class="m-0 text-dark">Aile odası</p>
 
                     </div>
 
@@ -1285,40 +1305,40 @@
                 <div class="col-lg-3 yazilar">
                   <div class="row">
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-success">
                       Tüm odalarda sunulan olanaklar
 
-                      <p class="m-0">Balkon/teras
+                      <p class="m-0 text-dark">Balkon/teras
 
                       </p>
-                      <p class="m-0">Banyo malzemeleri
+                      <p class="m-0 text-dark">Banyo malzemeleri
 
                       </p>
-                      <p class="m-0">Duş</p>
-                      <p class="m-0">Havlu</p>
-                      <p class="m-0">Kablosuz internet erişimi (ücretsiz)
+                      <p class="m-0 text-dark">Duş</p>
+                      <p class="m-0 text-dark">Havlu</p>
+                      <p class="m-0 text-dark">Kablosuz internet erişimi (ücretsiz)
                       </p>
-                      <p class="m-0">Klima</p>
-                      <p class="m-0">Koltuk</p>
-                      <p class="m-0">Küçük mutfak
+                      <p class="m-0 text-dark">Klima</p>
+                      <p class="m-0 text-dark">Koltuk</p>
+                      <p class="m-0 text-dark">Küçük mutfak
                       </p>
-                      <p class="m-0">Mini bar
+                      <p class="m-0 text-dark">Mini bar
                       </p>
-                      <p class="m-0">Oda içi kasa
+                      <p class="m-0 text-dark">Oda içi kasa
                       </p>
-                      <p class="m-0">Özel banyo
+                      <p class="m-0 text-dark">Özel banyo
                       </p>
-                      <p class="m-0">Saç kurutma makinesi
+                      <p class="m-0 text-dark">Saç kurutma makinesi
                       </p>
-                      <p class="m-0">Ses izolasyonu
+                      <p class="m-0 text-dark">Ses izolasyonu
                       </p>
-                      <p class="m-0">Telefon</p>
-                      <p class="m-0">Terlik</p>
-                      <p class="m-0">Uydu/kablo TV
+                      <p class="m-0 text-dark">Telefon</p>
+                      <p class="m-0 text-dark">Terlik</p>
+                      <p class="m-0 text-dark">Uydu/kablo TV
                       </p>
-                      <p class="m-0">Ücretsiz şişe su
+                      <p class="m-0 text-dark">Ücretsiz şişe su
                       </p>
-                      <p class="m-0">Ütü/ütü masası
+                      <p class="m-0 text-dark">Ütü/ütü masası
                       </p>
 
 
@@ -1343,36 +1363,36 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-success">
                       Giriş
 
-                      <p class="m-0">24 saat giriş
+                      <p class="m-0 text-dark">24 saat giriş
 
                       </p>
-                      <p class="m-0">24 saat güvenlik
+                      <p class="m-0 text-dark">24 saat güvenlik
                       </p>
-                      <p class="m-0">24 saat resepsiyon
+                      <p class="m-0 text-dark">24 saat resepsiyon
 
                       </p>
-                      <p class="m-0">CCTV in common areas
+                      <p class="m-0 text-dark">CCTV in common areas
                       </p>
-                      <p class="m-0">CCTV outside property
+                      <p class="m-0 text-dark">CCTV outside property
 
                       </p>
-                      <p class="m-0">
+                      <p class="m-0 text-dark">
                         Evcil hayvanlar kabul edilir
                       </p>
-                      <p class="m-0">Fire extinguisher
+                      <p class="m-0 text-dark">Fire extinguisher
                       </p>
-                      <p class="m-0">Hızlı giriş/çıkış
+                      <p class="m-0 text-dark">Hızlı giriş/çıkış
                       </p>
-                      <p class="m-0">Non-smoking rooms
+                      <p class="m-0 text-dark">Non-smoking rooms
                       </p>
-                      <p class="m-0">Özel giriş/çıkış
+                      <p class="m-0 text-dark">Özel giriş/çıkış
                       </p>
-                      <p class="m-0">Safety/security feature
+                      <p class="m-0 text-dark">Safety/security feature
                       </p>
-                      <p class="m-0">Smoke alarms
+                      <p class="m-0 text-dark">Smoke alarms
                       </p>
 
 
@@ -1380,19 +1400,19 @@
 
 
 
-                    <div class="col-lg-12  mt-3">
+                    <div class="col-lg-12  mt-3 text-success">
                       Ulaşım
-                      <p class="m-0">Havaalanı transferi
+                      <p class="m-0 text-dark">Havaalanı transferi
                       </p>
-                      <p class="m-0">Servis aracı
+                      <p class="m-0 text-dark">Servis aracı
                       </p>
-                      <p class="m-0">Taksi hizmeti
+                      <p class="m-0 text-dark">Taksi hizmeti
                       </p>
-                      <p class="m-0">Tesis yakınında otopark
+                      <p class="m-0 text-dark">Tesis yakınında otopark
                       </p>
-                      <p class="m-0">Ücretsiz otopark
+                      <p class="m-0 text-dark">Ücretsiz otopark
                       </p>
-                      <p class="m-0">Vale park hizmeti
+                      <p class="m-0 text-dark">Vale park hizmeti
                       </p>
 
 
@@ -1472,15 +1492,15 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-danger">
                       Yakınındaki havaalanları
 
-                      <p class="m-0 mt-2">Sabiha Gökçen Uluslararası Havaalanı (SAW)
+                      <p class="m-0 mt-2 text-dark">Sabiha Gökçen Uluslararası Havaalanı (SAW)
                       </p>
-                      <p class="text-danger">16,5 km arabayla 28 dk.</p>
-                      <p class="m-0">İstanbul Havaalanı (IST)
+                      <p class="text-primary">16,5 km arabayla 28 dk.</p>
+                      <p class="m-0 text-dark">İstanbul Havaalanı (IST)
                       </p>
-                      <p class="text-danger">45,9 km
+                      <p class="text-primary">45,9 km
                       </p>
 
                     </div>
@@ -1507,18 +1527,18 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-danger">
                       Toplu taşıma
 
 
-                      <p class="m-0">Küçükyalı Metro
+                      <p class="m-0 text-dark">Küçükyalı Metro
 
                       </p>
-                      <p class="text-danger">3,7 km
+                      <p class="text-primary">3,7 km
                       </p>
-                      <p class="m-0">Küçükyalı Metro İstasyonu
+                      <p class="m-0 text-dark">Küçükyalı Metro İstasyonu
                       </p>
-                      <p class="text-danger">3,7 km</p>
+                      <p class="text-primary">3,7 km</p>
 
                     </div>
 
@@ -1545,17 +1565,17 @@
                 <div class="col-lg-4 yazilar">
                   <div class="row">
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-danger">
                       Hastaneler ve klinikler
 
 
-                      <p class="m-0">Adım Eczanesi
-                      <p class="text-danger">340 m
+                      <p class="m-0 text-dark">Adım Eczanesi
+                      <p class="text-primary">340 m
                       </p>
 
-                      <p class="m-0">ATM
+                      <p class="m-0 text-dark">ATM
 
-                      <p class="text-danger">220 m
+                      <p class="text-primary">220 m
                       </p>
 
 
@@ -1603,10 +1623,10 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-primary">
                       Ünlü simgesel yapılar
 
-                      <p class="m-0 mt-4">Dolmabahçe Sarayı
+                      <p class="m-0 mt-4 simgeselyapi">Dolmabahçe Sarayı
                       </p>
                       <p>13.8 km</p>
                       <p class="m-0 simgeselyapi">Topkapı Sarayı</p>
@@ -1639,11 +1659,11 @@
                   <div class="row">
 
 
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 text-primary">
                       Yakındaki simgesel yapılar
 
 
-                      <p class="m-0 mt-4">Adım Eczanesi
+                      <p class="m-0 mt-4 simgeselyapi">Adım Eczanesi
                       </p>
                       <p>340 m</p>
                       <p class="m-0 simgeselyapi">Berka</p>
@@ -1720,297 +1740,730 @@
         <div class="col-lg-12">
           <div class="row">
             <div class="card mb-3">
-  
+
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-12 d-flex justify-content-between">
-                    <h5 class="card-title">Tesis politikaları</h5>
+                    <h5 class="card-title text-danger">Tesis politikaları</h5>
                     <div class="col-lg-6  d-flex justify-content-end">
-                      
-                        
+
+
                     </div>
-  
+
                   </div>
                 </div>
                 <p class="card-text">Çocuklar ve ek yataklar
                 </p>
-                <p><p>Ekstra yataklar seçtiğiniz odaya bağlıdır. Lütfen daha fazla bilgi için oda detaylarını okuyunuz.
+                <p>
+                <p>Ekstra yataklar seçtiğiniz odaya bağlıdır. Lütfen daha fazla bilgi için oda detaylarını okuyunuz.
 
-                  Tüm çocuklar kabul edilir.</p></p>
-  
-                  <div class="row">
-                    <div class="col-lg-12 d-flex">
-                      <div class="col-lg-4">
-                         <div class="card w-50">
-                    <div class="card-body">
-                      <h5 class="card-title">0 - 6 yaş arası çocuklar dahil</h5>
-                      <p class="card-text">Mevcut yatakla ücretsiz kalın..</p>
-                     <p>Ek yatak talep etmeniz halinde ek ücret ödenmesi gerekir.
-                    </p>
-                    </div>
-                  </div>
-                      </div>
+                  Tüm çocuklar kabul edilir.</p>
+                </p>
 
-                      <div class="col-lg-4">
-                        <div class="card w-50">
-                   <div class="card-body">
-                     <h5 class="card-title">0 - 6 yaş arası çocuklar dahil</h5>
-                     <p class="card-text">Mevcut yatakla ücretsiz kalın..</p>
-                    <p>Ek yatak talep etmeniz halinde ek ücret ödenmesi gerekir.
-                   </p>
-                   </div>
-                 </div>
-                     </div>
-
-                    </div>
-                  </div>
-                 
-  
-  
-  
-                <!-- en büyük alan - hakkında kısmı -->
                 <div class="row">
-                  <div class="col-lg-4 yazilar">
-                    <div class="row">
-  
-  
-                      <div class="col-lg-12 ">
-                        Yakınındaki havaalanları
-  
-                        <p class="m-0 mt-2">Sabiha Gökçen Uluslararası Havaalanı (SAW)
-                        </p>
-                        <p class="text-danger">16,5 km arabayla 28 dk.</p>
-                        <p class="m-0">İstanbul Havaalanı (IST)
-                        </p>
-                        <p class="text-danger">45,9 km
-                        </p>
-  
+                  <div class="col-lg-12 d-flex">
+                    <div class="col-lg-4">
+                      <div class="card w-100 h-100 bg-success ">
+                        <div class="card-body tesiscard">
+                          <h5 class="card-title text-light">0 - 6 yaş arası çocuklar dahil</h5>
+
+                          <p class="card-title text-light">Ek yatak talep etmeniz halinde ek ücret ödenmesi gerekir.
+                          </p>
+                        </div>
                       </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
                     </div>
-  
-  
-                  </div>
-  
-  
-                  <div class="col-lg-4 yazilar">
-                    <div class="row">
-  
-  
-                      <div class="col-lg-12 ">
-                        Toplu taşıma
-  
-  
-                        <p class="m-0">Küçükyalı Metro
-  
-                        </p>
-                        <p class="text-danger">3,7 km
-                        </p>
-                        <p class="m-0">Küçükyalı Metro İstasyonu
-                        </p>
-                        <p class="text-danger">3,7 km</p>
-  
+
+                    <div class="col-lg-4">
+                      <div class="card w-100 ms-3 bg-success ">
+                        <div class="card-body tesiscard">
+                          <h5 class="card-title text-light">7 yaş ve üzeri konuklar yetişkin kabul edilir</h5>
+                          <p class="card-text text-light">Ek ücret karşılığında ek yatak kullanılması gerekir.</p>
+
+                        </div>
                       </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
                     </div>
-  
-  
+
+
+
                   </div>
-  
-  
-                  <div class="col-lg-4 yazilar">
-                    <div class="row">
-  
-                      <div class="col-lg-12 ">
-                        Hastaneler ve klinikler
-  
-  
-                        <p class="m-0">Adım Eczanesi
-                        <p class="text-danger">340 m
-                        </p>
-  
-                        <p class="m-0">ATM
-  
-                        <p class="text-danger">220 m
-                        </p>
-  
-  
-  
-  
-  
-  
-                      </div>
-  
-  
-  
-  
-  
-  
-  
-                    </div>
-  
-  
-                  </div>
-  
-  
-  
-  
-  
-  
-  
                 </div>
-  
+
+
+
+
+                <!-- en büyük alan - hakkında kısmı -->
+
+
                 <div class="row">
                   <div class="col-lg-12">
-                    <div class="mt-5 col-4">
-                      Yakındakiler
+                    <div class="mt-5 col-4 text-danger">
+                      Yararlı bilgiler
                     </div>
                   </div>
-  
+
                   <div class="cizgi w-100 mt-3"></div>
-  
-  
-  
+
+
+
                 </div>
-  
-  
+
+
                 <div class="row">
                   <div class="col-lg-4 yazilar">
                     <div class="row">
-  
-  
+
+
                       <div class="col-lg-12 ">
-                        Ünlü simgesel yapılar
-  
-                        <p class="m-0 mt-4">Dolmabahçe Sarayı
+                        <p class="text-primary">Giriş-Çıkış</p>
+
+                        <p class="m-0 mt-4">Giriş saati: 14:00
+                        </p>
+
+                        <p class="m-0 mt-3 simgeselyapi">Son giriş saati: 04:30
+                        </p>
+
+                        <p class="m-0 mt-3 simgeselyapi">İlk çıkış saati: 12:00
+                        </p>
+
+                        <p class="m-0 mt-3 simgeselyapi">Çıkış saati: 12:00
+                        </p>
+
+
+                      </div>
+                      <div class="col-lg-12 mt-4 ">
+                        <p class="text-primary">Ulaşım</p>
+
+                        <p class="m-0 mt-3">Havaalanı Transfer Ücreti: 65 EUR
                         </p>
                         <p>13.8 km</p>
-                        <p class="m-0 simgeselyapi">Topkapı Sarayı</p>
+                        <p class="m-0 simgeselyapi">Şehir Merkezinden Uzaklık: 2 km
+                        </p>
                         <p>13.9 km</p>
-                        <p class="m-0 simgeselyapi">Historic Areas of Istanbul</p>
-                        <p>14,1 km</p>
-                        <p class="m-0 simgeselyapi">Ayasofya</p>
-                        <p>14.1 km</p>
-                        <p class="m-0 simgeselyapi">Sultanahmet District</p>
-                        <p>14.3 km</p>
-                        <p class="m-0 simgeselyapi">Kapalı Çarşı</p>
-                        <p>15.1 km</p>
-                        <p class="m-0 simgeselyapi">Galata Tower</p>
-                        <p>15.1 km</p>
-                        <p class="m-0 simgeselyapi">Süleymaniye Camii</p>
-                        <p>15.7 km</p>
-  
+                        <p class="m-0 simgeselyapi">Havaalanına Olan Mesafe (dakika): 25
+                        </p>
+
+
+
                       </div>
-  
-  
-  
+
+
                     </div>
-  
-  
+
+
                   </div>
-  
-  
-  
+
+
+
                   <div class="col-lg-4 yazilar">
                     <div class="row">
-  
-  
-                      <div class="col-lg-12 ">
-                        Yakındaki simgesel yapılar
-  
-  
-                        <p class="m-0 mt-4">Adım Eczanesi
+
+
+                      <div class="col-lg-12 text-primary">
+                        Ekstralar
+
+
+                        <p class="m-0 mt-4 text-dark">Kahvaltı Ücreti (oda fiyatına dahil değilse): 7 EUR
+
                         </p>
-                        <p>340 m</p>
-                        <p class="m-0 simgeselyapi">Berka</p>
-                        <p>360 m</p>
-                        <p class="m-0 simgeselyapi">Ahu Eczanesi</p>
-                        <p>360 m</p>
-                        <p class="m-0 simgeselyapi">Yeditepe Kuruyemiş Market</p>
-                        <p>390 m</p>
-                        <p class="m-0 simgeselyapi">
-                          Fındıklı Parkı</p>
-                        <p>470 m</p>
-                        <p class="m-0 simgeselyapi">İstanbul Darülaceze</p>
-                        <p>510 m
-                        </p>
-                        <p class="m-0 simgeselyapi">
-                          Derecik market</p>
-                        <p>560 m</p>
-                        <p class="m-0 simgeselyapi">7renk Tekeller</p>
-                        <p>570 m</p>
-                        <p class="m-0 simgeselyapi">Tadem</p>
-                        <p>820 m</p>
-                        <p class="m-0 simgeselyapi">Black Tekel Shop</p>
-                        <p>840 m
-                        </p>
-  
+
+
                       </div>
-  
+
+
+
                     </div>
-  
-  
+
+
+
                   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+                  <div class="col-lg-4 yazilar">
+                    <div class="row">
+
+
+                      <div class="col-lg-12 text-primary">
+                        Tesis
+
+
+                        <p class="m-0 mt-4 text-dark">Lisans No / Yerel Vergi No / Şirket Adı: 3960513082</p>
+                        <p class="text-dark">Sigara İçilmeyen Odalar / Katlar: no
+                        </p>
+                        <p class="text-dark">Bar/loca sayısı: 2
+                        </p>
+                        <p class="text-dark">Kat Sayısı: 9
+                        </p>
+                        <p class="text-dark">Restoran Sayısı: 2
+                        </p>
+                        <p class="text-dark">Oda Sayısı: 81
+                        </p>
+                        <p class="text-dark">Oda Voltajı: 220
+                        </p>
+                        <p class="text-dark">Otelin İnşa Yılı: 2016
+                        </p>
+
+
+                      </div>
+
+
+
+                    </div>
+
+
+
+                  </div>
+
+
+
+
+
                 </div>
-  
-  
-  
-  
+
+
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <div class="col-6">
+            Gerçek konukların Cityloft 81 hakkında yazdığı değerlendirmeler
+          </div>
+          <div class="col-6 text-end">
+            Gerçek konuklar tarafından yazılmıştır
+          </div>
+
+
+        </div>
+
+        <div class="cizgi w-100 mt-3"></div>
+
+        <div class="col-lg-12 d-flex justify-content-between">
+          <div class="col-4 text-primary">
+            AGODA DEĞERLENDİRMELERİ (552)
+          </div>
+          <div class="col-4 text-primary">
+            BOOKİNG.COM DEĞERLENDİRMELERİ (807)
+          </div>
+          <div class="col-4 text-primary">
+            EK DEĞERLENDİRMELER (42)
+          </div>
+        </div>
+
+        <div class="cizgi w-100 mt-3"></div>
+
+
+        <div class="col-lg-2  ">
+
+          <svg width="3em" height="3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 fDdlNH Box-sc-kv6pi1-0 hwPxmQ"
+            style="transform: none;  border-radius: 10px; ">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M1.978 22.022V12C1.978 6.465 6.465 1.978 12 1.978S22.022 6.465 22.022 12 17.535 22.022 12 22.022H1.978zM12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11H1V12C1 5.925 5.925 1 12 1z"
+              fill="#2A2A2E"></path>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 8px;">7,4</text>
+          </svg>
+          <h5 class="me-3">Çok İyi</h5>
+
+        </div>
+        <div class="col-3">
+          <div class="progress w-100 mt-2" role="progressbar" aria-label="Info example" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 50%"></div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>Hizmet</p>
+            <p>7.8</p>
+
+          </div>
+
+          <div class="progress w-100 mt-2" role="progressbar" aria-label="Info example" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 50%"></div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>Fiyat/performans oranı</p>
+            <p>7.6</p>
+          </div>
+
+
+          <div class="progress w-100 mt-2" role="progressbar" aria-label="Info example" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 50%"></div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>Konum</p>
+            <p>6.9</p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3">
+          <div class="progress w-100 mt-2" role="progressbar" aria-label="Info example" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 50%"></div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>Temizlik</p>
+            <p>7.6</p>
+          </div>
+
+
+          <div class="progress w-100 mt-2" role="progressbar" aria-label="Info example" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 50%"></div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>Tesis içerikleri</p>
+            <p>7.1</p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4">
+          <div class="col-lg-12 ">
+            <p>Puan</p>
+
+            <p class="m-0 mt-4"><input type="radio" name="1">9+ Mükemmel (40)
+
+            </p>
+
+            <p class="m-0 mt-3 simgeselyapi"><input type="radio" name="1">8-9 Kusursuz (23)
+
+            </p>
+
+            <p class="m-0 mt-3 simgeselyapi"><input type="radio" name="1">7-8 Çok İyi (26)
+
+            </p>
+
+            <p class="m-0 mt-3 simgeselyapi"><input type="radio" name="1">6-7 İyi (10)
+
+            </p>
+            <p class="m-0 mt-3 simgeselyapi"><input type="radio" name="1">-6 beklenenin altında(65)
+
+            </p>
+
+
+          </div>
+        </div>
+
+        <div class="row w-100">
+          <div class="col-lg-12 d-flex mt-3 ">
+            <div class="col-lg-5 ">
+              <div class="dropdown-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Tüm konuk türleri (553)
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tüm konuk türleri (553)</a></li>
+                  <li><a class="dropdown-item" href="#">Çiftler (246)</a></li>
+                  <li><a class="dropdown-item" href="#">Yalnız seyahat edenler (125)</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="dropdown-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Tüm oda tipleri
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Standart Çift Kişilik Oda</a></li>
+                  <li><a class="dropdown-item" href="#">Delüks Teras Odası</a></li>
+                  <li><a class="dropdown-item" href="#">Köşe Süit</a></li>
+                  <li><a class="dropdown-item" href="#">Çatı Katı Süit</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2">
+              <div class="dropdown-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Tüm diller
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Türkçe</a></li>
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="cizgi w-100 mt-5"></div>
+
+        <div class="row">
+          <div class="col-lg-4 mt-5">
+            <p>Şu özelliklerden bahseden değerlendirmeleri göster: </p>
+          </div>
+
+          <div class="col-lg-8 d-flex mt-5">
+            <button class="ms-5 borders">Tüm Değerlendirmeler</button>
+            <button class="ms-5 borders">Houseekeeping</button>
+            <button class="ms-5 borders">Food&Dining</button>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-4 mt-5">
+            <p>Şu özelliklerden bahseden değerlendirmeleri göster: </p>
+          </div>
+
+          <div class="col-lg-8 d-flex justify-content-end mt-5">
+            <p>Şuna Göre Ayır</p>
+            <div class="dropdown ms-2">
+              <a class="btn btn-secondary dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                En faydalı
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" id="sort-button" onclick="sortCard('rating')">Puanlama, Yüksekten düşüğe</button></li>
+                <li><button class="dropdown-item" onclick="sortCard('rating', true)">Puanlama, Düşükten yükseğe</button></li>
+                
+              
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="cizgi w-100 mt-3"></div>
+<div class="card-container">
+<div class="card p-2 m-3"  data-rating="7.8"  >
+  <div class="row">
+
+    <div class="col-lg-4 mt-3 ">
+      <p class="mt-1 text-primary kusursuz"> 7.8 Kusursuz</p>
+      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Onurcan</p>
+      <p class="mt-1 kusursuz2 p-0">Çift</p>
+      <p class="mt-1 kusursuz2 p-0">Jakuzili Süit
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
+      </p>
+    </div>
+
+    <div class="col-lg-8 mt-5">
+      <div class="card mb-3">
+
+        <div class="card-body">
+          <h5 class="card-title">"Verimli bir konaklama"
+          </h5>
+          <p class="card-text">Kız arkadaşım ile birlikte iki kişi konakladık, temiz güzel düzeni olan istanbul
+            içerisinde agoda üzerinden iyi fiyatlı tatmin edici bir konaklamaydı biz memnun kaldık
+
+          </p>
+          <p class="card-text"><small class="text-body-secondary">22 Aralık 2023 tarihinde yazıldı
+            </small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-12 d-flex justify-content-end ">
+        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
+        <p class="ms-2 text-primary">EVET|HAYIR</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card p-2 m-3"  data-rating="5.8"  >
+  <div class="row">
+
+    <div class="col-lg-4 mt-3 ">
+      <p class="mt-1 text-primary kusursuz">5.6</p>
+      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Tugba</p>
+      <p class="mt-1 kusursuz2 p-0">Çift</p>
+      <p class="mt-1 kusursuz2 p-0">Standart Çift Kişilik Oda
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
+
+
+      </p>
+    </div>
+
+    <div class="col-lg-8 mt-5">
+      <div class="card mb-3">
+
+        <div class="card-body">
+          <h5 class="card-title">"temizlik çok kötü"
+          </h5>
+          <p class="card-text">internette aldığımız oda ile verilen oda başkaydı. halılar pis ve lekeliydi, banyonun tepedeki duş başlığı bozuktu ve sıcak su 7-8 dk sonra geliyordu. Diğer city loft otellerinde kaldığımızda gayet iyiydi ama 81 kesinlikle kötü. boşuna paranızı harcamayın.
+
+          </p>
+          <p class="card-text"><small class="text-body-secondary">21 Aralık 2023 tarihinde yazıldı
+
+            </small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-12 d-flex justify-content-end ">
+        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
+        <p class="ms-2 text-primary">EVET|HAYIR</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card p-2 m-3"  data-rating="5,2"  >
+  <div class="row">
+
+    <div class="col-lg-4 mt-3 ">
+      <p class="mt-1 text-primary kusursuz">5,2</p>
+      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Evren
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Küçük çocuklu aile
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Jakuzili Süit
+
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde 2 gece kaldı
+
+      </p>
+    </div>
+
+    <div class="col-lg-8 mt-5">
+      <div class="card mb-3">
+
+        <div class="card-body">
+          <h5 class="card-title">"Ortalamanın üstünde"
+          </h5>
+          <p class="card-text">Otel belli ki zamanın iyi bir tesisi imiş.Fakat bir hayli bakımsız ve kirliydi maalesef.Yeni bir tamirat-tadilat ile çok daha iyi olacaktır eminim.Odası gayet güzeldi zira fakat bakımsız ve çok temiz değildi.
+
+
+
+          </p>
+          <p class="card-text"><small class="text-body-secondary">18 Aralık 2023 tarihinde yazıldı
+
+            </small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-12 d-flex justify-content-end ">
+        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
+        <p class="ms-2 text-primary">EVET|HAYIR</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card p-2 m-3"  data-rating="2,4"  >
+  <div class="row">
+
+    <div class="col-lg-4 mt-3 ">
+      <p class="mt-1 text-primary kusursuz">2,4</p>
+      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Arzu
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Tek seyahat edenler
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Standart Çift Kişilik Oda
+
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
+
+      </p>
+    </div>
+
+    <div class="col-lg-8 mt-5">
+      <div class="card mb-3">
+
+        <div class="card-body">
+          <h5 class="card-title">"1 gece kalamadim"
+          </h5>
+          <p class="card-text">1700tl ye yakin (kahvalti haric) odada 1 gece kalamadim.10m2 en berbat kucuk odayi vermisler. Bir aynali masasi yok, karyoladan ayagin duvara carpiyor bu kadar igrenc bir yer. Hic kimseye tavsiye etmiyorum. Burada kalamayacahim bu sartlarda dememe ragmen suratima bakiyorlar hic kimse ilgilenmedi. Param cope gitti. Haram zikkim olsun bu otele
+
+          </p>
+          <p class="card-text"><small class="text-body-secondary">02 Ocak 2024 tarihinde yazıldı
+            </small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-12 d-flex justify-content-end ">
+        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
+        <p class="ms-2 text-primary">EVET|HAYIR</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+</div>
+
+      
+
+
+      <div class="row">
+        <div class="col-12 mb-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.1382402890745!2d29.140128076039097!3d40.97845367135464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac5fcfba811db%3A0x2b9323a30530950f!2sCityloft%2081%20Hotels!5e0!3m2!1str!2str!4v1703685283905!5m2!1str!2str"
+            class="w-100" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-12 text-center">
+          <p>En sevilen noktalar</p>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-lg-12 d-flex flex-wrap mt-3">
+          <ul id="listeler">
+            <li><img src="./img/1571294295.jpg" alt="">
+            <p class="resimüstü">Tayland</p>
+            </li>
+            
+            <li><img src="./img/alm.jpg" alt="">
+              <p class="resimüstü">Almanya</p></li>
+            <li><img src="./img/Endonezya-baskenti-cakarta-panaromik.jpg" alt="">
+              <p class="resimüstü">Endonezya</p></li>
+            <li><img src="./img/tTOxgJdSOC-58-image-jpg.jpg" alt="">
+              <p class="resimüstü">Amerika</p></li>
+            <li><img src="./img/Baku-Azerbaycan_cpr7mb.jpg" alt="">
+            <p class="resimüstü">Azerbaycan</p></li>
+            <li><img src="./img/birlesik-arap-emirlikleri-turkiye-ile-ticarette-yeni-donem-78579.png" alt="">
+            <p class="resimüstü">Birleşik Arap E.</p></li>
+            <li><img src="./img/hollanda-amsterdam.jpg" alt="">
+            <p class="resimüstü">Hollanda</p></li>
+            <li><img src="./img/1577716354.jpg" alt="">
+            <p class="resimüstü">Japonya</p></li>
+          </ul>
+        </div>
+      </div>
+
+
+          <div class="row">
+            <div class="col-lg-4 d-flex justify-content-evenly">
+              <div class="col-lg-2 liste w-50">
+                Yardım
+                <ul>
+                  <li>Yardım merkezi</li>
+                  <li>SSS</li>
+                  <li>Gizlilik Politikası</li>
+                  <li>Çerez Politikası</li>
+                  <li>Kullanım Koşulları</li>
+                  <li>Çerez ayarlarını yönet</li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 liste">
+                Şirket
+                <ul>
+                  <li>Hakkımızda</li>
+                  <li>Kariyer</li>
+                  <li>Basın</li>
+                  <li>Blog</li>
+                  <li>PointsMAX</li>
+                </ul>
+              </div>
+
+            
+
+
+            </div>
+
+
+            <div class="col-lg-4 text-center liste">
+              Gidilecek Yerler
+              <ul>
+                <li>Ülkeler</li>
+                <li>Şehirler</li>
+              </ul>
+            </div>
+
+
+            <div class="col-lg-4 d-flex justify-content-evenly">
+              <div class="col-lg-2 liste w-50">
+                Yardım
+                <ul>
+                  <li>Yardım merkezi</li>
+                  <li>SSS</li>
+                  <li>Gizlilik Politikası</li>
+                  <li>Çerez Politikası</li>
+                  <li>Kullanım Koşulları</li>
+                  <li>Çerez ayarlarını yönet</li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 liste">
+                Şirket
+                <ul>
+                  <li>Hakkımızda</li>
+                  <li>Kariyer</li>
+                  <li>Basın</li>
+                  <li>Blog</li>
+                  <li>PointsMAX</li>
+                </ul>
+              </div>
+
+            
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2027,6 +2480,8 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-</body>
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+<script src="index.js"></script>
 </html>
