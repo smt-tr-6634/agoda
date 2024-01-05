@@ -22,4 +22,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",index,name="index"),
+    path("endyear/", endyearPage, name="endyear"),
+    path("eliteoffers/", eliteoffersPage, name="eliteoffers"),
+    path("payless/", paylessPage, name="payless"),
+    path("staylonger/", staylongerPage, name="staylonger"),
+    path("deals/", dealsPage, name="deals"),
+    path("reservation/", reservationPage, name="reservation"),
+    path("chance/", chancePage, name="chance"),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
