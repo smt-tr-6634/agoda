@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<style>
+    .card {
+      background-color: #fff;
+      border-radius: 3px;
+      padding: 20px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .group {
+      position: relative;
+    }
+    
+    .form .group label {
+      font-size: 14px;
+      color: rgb(99, 102, 102);
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background-color: #fff;
+      transition: all .3s ease;
+    }
+    
+    .form .group input,
+    .form .group textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      outline: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+    
+    .form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+      top: 10px;
+      background-color: transparent;
+    }
+    
+    .form .group input:focus,
+    .form .group textarea:focus {
+      border-color: #3366cc;
+    }
+    
+    .form .group input:focus+ label, .form .group textarea:focus +label {
+      top: -10px;
+      left: 10px;
+      background-color: #fff;
+      color: #3366cc;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .form .group textarea {
+      resize: none;
+      height: 100px;
+    }
+    
+    .form button {
+      background-color: #3366cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .form button:hover {
+      background-color: #27408b;
+    }
+    
+    .material-checkbox{
+      cursor: pointer;
+    }
+    .material-checkbox:hover{
+      color: #27408b;
+    }
+  </style>
+{% endblock css %}
+{% block body %}
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg border">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg"
+              width="89"
+              height="37"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Konaklama</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Uçuşlar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"
+                  >Havaalanı Tranferleri</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"
+                  >Kuponlar ve Fırsatlar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Apartlar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"> </a>
+              </li>
+              <div class="dropdown icondrop">
+                <a
+                  class="btn dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-ellipsis" style="color: #2a2a2e"></i>
+                </a>
+  
+                <ul class="dropdown-menu icondrop-menu">
+                  <li><a class="dropdown-item" href="#">Apartlar</a></li>
+                  <li><a class="dropdown-item" href="#">Araç Kiralama</a></li>
+                </ul>
+              </div>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <img
+                  src="img/Wikipedia-Flags-TR-Turkey-Flag.512.png"
+                  width="24"
+                  height="18"
+                  alt=""
+                />
+                <a href="">Tl</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container d-flex justify-content-center">
+        <div class="card mt-5 pt-5 ">
+          <span class="title">Kayıt OL</span>
+          <form class="form form-register">
+            <div class="group">
+            <input placeholder="‎" type="text" required="">
+            <label for="name">Ad</label>
+            </div>
+            <div class="group">
+              <input placeholder="‎" type="text" required="">
+              <label for="name">Soyad</label>
+              </div>
+              <div class="group">
+                <input placeholder="‎" type="text" required="">
+                <label for="name">Email</label>
+                </div>
+              <div class="group">
+                <input class="password1" placeholder="‎" type="password" required="">
+                <label for="name">Şifre</label>
+                </div>
+                <div class="group">
+                  <input  class="password2" placeholder="‎" type="password" required="">
+                  <label for="name">Şifre Tekrar</label>
+                  </div>
+                  <div class="alert alert-danger register-alert" role="alert">
+                   Şifreler Aynı Değil
+                  </div>
+                  
+                  <label class="material-checkbox d-flex  mb-4">
+                    <input type="checkbox"  width="45px" >
+                      <p class=" m-0 ms-3  p-0"> Özel Agoda programları hakkındaki e-postaları almak istiyorum. Gizlilik Politikası'nda belirtildiği üzere daha sonra bu kararımdan vaz geçebilirim.</p>
+                   
+                  </label>                
+            <button   type="submit">Submit</button>
+            <hr>
+            <a class="btn btn-primary"   type="submit">Zaten bir hesabınız varmı giriş Yapın</a>
+          </form>
+        </div>
+      </div>
+{% endblock body %}
+{% block js %}
+  
+{% endblock js %}
