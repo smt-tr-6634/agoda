@@ -176,30 +176,44 @@
       <div class="container d-flex justify-content-center">
         <div class="card mt-5 pt-5 ">
           <span class="title">Kayıt OL</span>
-          <form class="form form-register">
+          <form class="form form-register" method="POST">
+            {% csrf_token %}
             <div class="group">
-            <input placeholder="‎" type="text" required="">
+            <input placeholder="‎"  name="name" type="text" required="">
             <label for="name">Ad</label>
             </div>
             <div class="group">
-              <input placeholder="‎" type="text" required="">
-              <label for="name">Soyad</label>
+              <input placeholder="‎"  name="surname" type="text" required="">
+              <label for="surname">Soyad</label>
               </div>
               <div class="group">
-                <input placeholder="‎" type="text" required="">
-                <label for="name">Email</label>
-                </div>
-              <div class="group">
-                <input class="password1" placeholder="‎" type="password" required="">
-                <label for="name">Şifre</label>
+                <input placeholder="‎" name="email" type="text" required="">
+                <label for="email">Email</label>
                 </div>
                 <div class="group">
-                  <input  class="password2" placeholder="‎" type="password" required="">
-                  <label for="name">Şifre Tekrar</label>
+                  <input placeholder="‎" name="phone" type="number" required="">
+                  <label for="email">Telefon NUmarası</label>
                   </div>
-                  <div class="alert alert-danger register-alert" role="alert">
+              <div class="group">
+                <input class="password1" placeholder="‎" name="password1" type="password" required="">
+                <label for="password1">Şifre</label>
+                </div>
+                <div class="group">
+                  <input  class="password2" placeholder="‎" name="password2" type="password" required="">
+                  <label for="password2">Şifre Tekrar</label>
+                  </div>
+
+                   {% for i in messages  %}
+                   <div class="alert alert-danger " role="alert">
+                    {{i}}
+                   </div>
+                   {% endfor %}
+                  
+                   <div class="alert alert-danger register-alert" role="alert">
                    Şifreler Aynı Değil
                   </div>
+               
+                 
                   
                   <label class="material-checkbox d-flex  mb-4">
                     <input type="checkbox"  width="45px" >

@@ -170,7 +170,6 @@ $(window).scroll(function () {
   $(".register-alert").hide();
   $(document).ready(function () {
     $(".form-register").submit(function (e) {
-      e.preventDefault();
       var password1 = $(".password1").val();
       var password2 = $(".password2").val();
   
@@ -178,12 +177,13 @@ $(window).scroll(function () {
         $(".register-alert").hide();
       } else {
         $(".register-alert").show();
+        e.preventDefault(); // Şifreler aynı değilse formu göndermeyi engelle
       }
     });
   });
   
   // login
-  $(".form-login-mobil").hide();
+  $(".form-login-mobil").show();
   $(".div-login a").click(function (e) {
     e.preventDefault();
   
@@ -204,6 +204,9 @@ $(window).scroll(function () {
   
   
   // profile sayfası
+ 
+ 
+ 
   $(".profile-edit-name").hide();
   $(".edit").click(function (e) { 
     e.preventDefault();
