@@ -25,4 +25,5 @@ urlpatterns = [
     path("",index,name="index"),
     path("login/",login,name="login"),
     path("register/",register,name="register"),
+    path("detay/",detail,name="detail"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
