@@ -9,3 +9,7 @@ def index(request):
     return render(request,"citys.html",context,)
 
 
+def detail(request):
+    context={}
+
+    return render(request,"detay.html",context,)
