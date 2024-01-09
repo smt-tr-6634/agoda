@@ -12,4 +12,4 @@ class userinfo(models.Model):
     phone=models.CharField(("telefon numarası"), max_length=11, null=True, blank=True)
     password=models.CharField(("şifre"), max_length=50)
     def __str__(self) :
-        return self.name
+        return self.user.username
