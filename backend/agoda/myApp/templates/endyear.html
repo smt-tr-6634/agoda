@@ -183,23 +183,27 @@
                
         
                     <div class="row">
-                        
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
+                        {% for i in hotel_data %}
+                        <div class="col-xxl-3 mt-3 col-lg-4 col-md-6 col-sm-12">
                           <a href="">
                             <div class="card">
-                              <img src="{% static 'img/tayfun/bintang bali resort.webp' %}" class="card-img-top" style="height:180px;" alt="Card image cap">
+                              <img src="{{i.hotel.mainimg.url}}" class="card-img-top" style="height:180px;" alt="Card image cap">
                               <div class="card-body">
                                 <div class="hotel-title">
-                                  <span class="hotel-name">Bintang Bali Resort</span>
+                                  <span class="hotel-name"> <a href="/detay/{{i.hotel.id}}">{{i.hotel.hotelname}}</a> </span>
                                 </div>
+                                <span class="text-primary" style="font-size:13px;"> 
+                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
+                                  {{i.hotel.hotellocation}}
+                                </span>
                                 <div class="rating text-warning" style="font-size: 10px;">
                                   <i class="fa-solid fa-star"></i>
                                   <i class="fa-solid fa-star"></i>
                                   <i class="fa-solid fa-star"></i>
                                   <i class="fa-solid fa-star"></i>
                                   <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kuta,Bali</span>
+                                 
+                                    
                                 </div>
                                 <div class="review-information">
                                   <div class="text">Kusursuz</div>
@@ -215,230 +219,13 @@
                             </div>
                           </a>
                       </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img src="{% static 'img/tayfun/oyo townhouse oak series signature bali.avif' %}" class="card-img-top" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Oyo Townhouse Oak Series</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                 
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kabupaten Badung,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Çok İyi</div>
-                                  <div class="text-secondary">1.465 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 5.809</strike></div>
-                                  <div class="total-price text-danger">TL 1.979</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img class="card-img-top" src="{% static 'img/tayfun/princess keisha hotel.jpeg' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Princess Keisha Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Denpasar,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Mükemmel</div>
-                                  <div class="text-secondary">2.395 değerlendirme</div>
-                                </div>
-                               
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 4.351</strike></div>
-                                  <div class="total-price text-danger">TL 1.279</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img class="card-img-top" src="{% static 'img/tayfun/grand la walon hotel.jpg' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Grand La Walon Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kuta,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Kusursuz</div>
-                                  <div class="text-secondary">3.484 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 5.542</strike></div>
-                                  <div class="total-price text-danger">TL 1.679</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
                        
+                        {% endfor %}
+                      
                         
                     </div>
                         
-                    <div class="row mt-3">
-                        
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img class="card-img-top" src="{% static 'img/tayfun/prime biz hotel kuta.jpg' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Prime Biz Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kuta,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">İyi</div>
-                                  <div class="text-secondary">1.768 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 3.804</strike></div>
-                                  <div class="total-price text-danger">TL 1.479</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img class="card-img-top" src="{% static 'img/tayfun/ubud village hotel.jpg' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Ubud Village Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Ubud,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">İyi</div>
-                                  <div class="text-secondary">1.495 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top: 40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 4.804</strike></div>
-                                  <div class="total-price text-danger">TL 2.379</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img class="card-img-top" src="{% static 'img/tayfun/famous hotel kuta bali.webp' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Famous Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kuta,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Kusursuz</div>
-                                  <div class="text-secondary">4.572 değerlendirme</div>
-                                </div>
-                               
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 5.104</strike></div>
-                                  <div class="total-price text-danger">TL 2.379</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                      </div>
-                      <div class="col-xxl-3  col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">    
-                              <img class="card-img-top" src="{% static 'img/tayfun/oyo 1666 pudwajan hotel.jpg' %}" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name">Oyo 1666 Pudwajan Hotel</span>
-                                </div>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                    <span class="text-primary" style="font-size:13px;">Kabupaten Badung,Bali</span>
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Kusursuz</div>
-                                  <div class="text-secondary">3.658 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top: 40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 5.642</strike></div>
-                                  <div class="total-price text-danger">TL 2.448</div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>        
-                      </div>
-                        
-                    </div>
-        
+                    
                     <div class="row altyazı mt-5">
         
                       <div class="col-2"></div> 
