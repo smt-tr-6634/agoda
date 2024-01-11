@@ -31,9 +31,18 @@ def detail(request,Cardid):
 
 def endyearPage(request):
     
-    context={}
+     hotels = hotel.objects.all()
     
-    return render(request, "endyear.html" ,context)
+    
+     hotel_data = []
+     for h in hotels:
+        imgs = AdditionalImage.objects.filter(hotels=h)
+        hotel_data.append({"hotel": h, "images": imgs})
+
+     context = {"hotel_data": hotel_data}
+    
+     return render(request, "endyear.html", context)
+    
 
 
 
