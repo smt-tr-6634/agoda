@@ -481,67 +481,7 @@
       }
     }
     
-    /* loading */ 
-    .loading {
-      --speed-of-animation: 0.9s;
-      --gap: 6px;
-      --first-color: #4c86f9;
-      --second-color: #49a84c;
-      --third-color: #f6bb02;
-      --fourth-color: #f6bb02;
-      --fifth-color: #2196f3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      gap: 6px;
-      height: 100vh;
-      position: fixed;
-      top: 0%;
-      left: 0%;
-      background-color: black;
-      
-      z-index: 9999;
-   
-   
-     }
-     
-     .loading span {
-      width: 4px;
-      height: 50px;
-      background: var(--first-color);
-      animation: scale var(--speed-of-animation) ease-in-out infinite;
-     }
-     
-     .loading span:nth-child(2) {
-      background: var(--second-color);
-      animation-delay: -0.8s;
-     }
-     
-     .loading span:nth-child(3) {
-      background: var(--third-color);
-      animation-delay: -0.7s;
-     }
-     
-     .loading span:nth-child(4) {
-      background: var(--fourth-color);
-      animation-delay: -0.6s;
-     }
-     
-     .loading span:nth-child(5) {
-      background: var(--fifth-color);
-      animation-delay: -0.5s;
-     }
-     
-     @keyframes scale {
-      0%, 40%, 100% {
-       transform: scaleY(0.05);
-      }
-     
-      20% {
-       transform: scaleY(1);
-      }
-     }
+    
   </style>
 {% endblock css %}
 {% block body %}
@@ -751,24 +691,24 @@
             <h6>Yıldız sayısı</h6>
             <hr />
             <div class="d-flex justify-content-start">
-              <input type="checkbox" class="me-3" id="myCheckbox" />
-              <label for="myCheckbox">5 yıldızlı</label>
+              <input type="checkbox" class="me-3 star-checkbox" id="star5" data-star="5" />
+              <label for="star5">5 yıldızlı</label>
             </div>
             <div class="d-flex justify-content-start mt-3">
-              <input type="checkbox" class="me-3" id="myCheckbox" />
-              <label for="myCheckbox">4 yıldızlı</label>
+              <input type="checkbox" class="me-3 star-checkbox" id="star4" data-star="4" />
+              <label for="star4">4 yıldızlı</label>
             </div>
             <div class="d-flex justify-content-start mt-3">
-              <input type="checkbox" class="me-3" id="myCheckbox" />
-              <label for="myCheckbox">3 yıldızlı</label>
+              <input type="checkbox" class="me-3 star-checkbox" id="star3" data-star="3" />
+              <label for="star3">3 yıldızlı</label>
             </div>
             <div class="d-flex justify-content-start mt-3">
-              <input type="checkbox" class="me-3" id="myCheckbox" />
-              <label for="myCheckbox">2 yıldızlı</label>
+              <input type="checkbox" class="me-3 star-checkbox" id="star2" data-star="2" />
+              <label for="star2">2 yıldızlı</label>
             </div>
             <div class="d-flex justify-content-start mt-3">
-              <input type="checkbox" class="me-3" id="myCheckbox" />
-              <label for="myCheckbox">1 yıldızlı</label>
+              <input type="checkbox" class="me-3 star-checkbox" id="star1" data-star="1" />
+              <label for="star1">1 yıldızlı</label>
             </div>
             <h6 class="mt-4">Değerlendirme puanı</h6>
             <hr />
@@ -807,54 +747,32 @@
         </div>
          <div class="card-container">
           
-          <div class="card  mb-3   " data-price="16000"    data-rating="1.2"   >  
+          {% for i in hotel_data %}
+          <div class="card  mb-3   " data-price="{{i.hotel.price}}"                        data-rating="{{i.hotel.rating}}" data-star="{{i.hotel.star}}"  >  
             <div class="row g-0">
               <div class=" col-lg-4 col-md-12 p-0 p-2 ">
-                <img  src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid " alt="...">
+                <img  src="{{i.hotel.mainimg.url}}" class="img-fluid " alt="...">
                 <div class="card-img ">
                   <div class="row p-0 m-0 resim-container ">
-                    <div class="col-3 p-0">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
+                    {% for image in i.images %}
+                    <div class="col-3 p-0   col-img ">
+                        <img src="{{ image.image.url }}" class="img-fluid" alt="...">
+                    </div>
+                {% endfor %}
+                  
+    
                  </div> 
                 </div>
             </div>
               <div class="col-lg-5 col-md-12">
                 <div class="card-body">
-                  <h5 class="card-title   "><a href="">Cityloft 161</a></h5>
+                  <h5 class="card-title   "><a href="/detay/{{i.hotel.id}}"> {{i.hotel.hotelname}} </a></h5>
                   <p class="card-text">
-                    <a href=""
+                    <a href="{{i.hotel.hotellocationmap}}" target="_blank"
                       ><i class="fa-sharp fa-solid fa-location-dot me-1"></i
-                      >Ataşehir,İstanbul-Haritada Görüntüle
+                      > {{i.hotel.hotellocation}}
+                     
+                      
                     </a>
                   </p>
                   <p class="card-text">
@@ -881,6 +799,16 @@
                         </div>
                       </div>
                     </div>
+                    {% if i.hotel.star is not None %}
+                    <div class="star mt-3">
+                      {% for _ in "x"|rjust:i.hotel.star %}
+                        <i class="fa-solid fa-star" style="color: #ffa726; font-size: 13px;"></i>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  
+                  
+                    
                   </p>
                   <p class="card-text">
                     "Otelinizi gerçekten çok beğendim"
@@ -892,230 +820,38 @@
                   <div class=" card-text text-start">
                     <div class="evaluation d-flex justify-content-start justify-content-lg-center  ">
                       <div class=" card-text text-start">
-                        <h5 class="">Çok iyi</h5>
+                        <h5 class="">   
+                          {% if i.hotel.rating is not None %}
+                          {% if i.hotel.rating < 5 %}
+                             İyi
+                          {% elif 5 <= i.hotel.rating < 8 %}
+                              Güzel
+                          {% elif 8 <= i.hotel.rating < 9 %}
+                              Çok İyi
+                          {% elif 9 <= i.hotel.rating <= 10 %}
+                              Mükemmel
+                          {% endif %}
+                      {% endif %}
+                        </h5>
                         <p>123 Değerlendirme</p>
                       </div>
                       <svg class="ms-4"  width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 jUloin Box-sc-kv6pi1-0 cjESZE" style="transform: none;">
                         <path d="M1.199 3.053H21.99a1.5 1.5 0 0 1 1.5 1.5v14.983a1.5 1.5 0 0 1-1.5 1.5H4.53a1.5 1.5 0 0 1-1.5-1.5V8.333a.5.5 0 0 0-.1-.3L.399 4.653a1 1 0 0 1 .8-1.6zm0 1l2.53 3.381c.195.26.3.575.3.9v11.202a.5.5 0 0 0 .5.5H21.99a.5.5 0 0 0 .5-.5V4.553a.5.5 0 0 0-.5-.5H1.2z"></path> 
-                        <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 8px;">1.2</text>
+                        <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 6px; font-weight: 700;"> {{i.hotel.rating}}  </text>
                       </svg>
                     </div>
                   </div>
                   <div class="price text-lg-center  text-md-start mt-xxl-5 mt-lg-2 mt-md-3  ">
                     <h5>Ortalama Fiyat</h5>
-                    <span class="text-danger fw-bold  ">16000 Tl</span> <br>
+                    <span class="text-danger fw-bold  ">{{i.hotel.price}}</span> <br>
                     <a href="" class="btn btn-primary   " style="font-size: 10px;">Müsaitlik Durumunu Kontrol Et</a>
                 </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card  mb-3 " data-price="1200"   data-rating="8.2"   >
-            <div class="row g-0">
-              <div class=" col-lg-4 col-md-12 p-0 p-2 ">
-                <img  src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid " alt="...">
-                <div class="card-img ">
-                  <div class="row p-0 m-0 resim-container ">
-                    <div class="col-3 p-0">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img src="{% static 'img/abdulsamet/1_14932_02.jpg' %}" class="img-fluid" alt="...">
-      
-                  </div>
-                 </div> 
-                </div>
-            </div>
-              <div class="col-lg-5 col-md-12">
-                <div class="card-body">
-                  <h5 class="card-title   "><a href="">Cityloft 161</a></h5>
-                  <p class="card-text">
-                    <a href=""
-                      ><i class="fa-sharp fa-solid fa-location-dot me-1"></i
-                      >Ataşehir,İstanbul-Haritada Görüntüle
-                    </a>
-                  </p>
-                  <p class="card-text">
-                    <div class="tooltips w-100 ">
-                      <ul class="d-flex">
-                        <li>Havaalanı transferi</li>
-                        <li>Ücretsiz Wifi</li>
-                        <li>+6</li>
-                      </ul>
-                      <div class="tooltiptext"> 
-                        <div class="row    ">
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Hava alanı transferi
-                          </div>
-                          <div class="col-6  text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Bavul hizmeti
-                          </div>
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>24 saat resepsiyon
-                          </div>
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Her odada ücretsiz wifi
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </p>
-                  <p class="card-text">
-                    "Otelinizi gerçekten çok beğendim"
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12">
-                <div class="card-body h-100 Evaluation">
-                  <div class=" card-text text-start">
-                    <div class="evaluation d-flex justify-content-start justify-content-lg-center  ">
-                      <div class=" card-text text-start">
-                        <h5 class="">Çok iyi</h5>
-                        <p>123 Değerlendirme</p>
-                      </div>
-                      <svg class="ms-4"  width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 jUloin Box-sc-kv6pi1-0 cjESZE" style="transform: none;">
-                        <path d="M1.199 3.053H21.99a1.5 1.5 0 0 1 1.5 1.5v14.983a1.5 1.5 0 0 1-1.5 1.5H4.53a1.5 1.5 0 0 1-1.5-1.5V8.333a.5.5 0 0 0-.1-.3L.399 4.653a1 1 0 0 1 .8-1.6zm0 1l2.53 3.381c.195.26.3.575.3.9v11.202a.5.5 0 0 0 .5.5H21.99a.5.5 0 0 0 .5-.5V4.553a.5.5 0 0 0-.5-.5H1.2z"></path> 
-                        <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 8px;">8.2</text>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="price text-lg-center  text-md-start mt-xxl-5 mt-lg-2 mt-md-3 ">
-                    <h5>Ortalama Fiyat</h5>
-                    <span class="text-danger fw-bold mt-1">1200</span> <br>
-                    <a href="" class="btn btn-primary mt-2   " style="font-size: 10px;">Müsaitlik Durumunu Kontrol Et</a>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card  mb-3 " data-price="1100"   data-rating="5.2"   >
-            <div class="row g-0">
-              <div class=" col-lg-4 col-md-12 p-0 p-2 ">
-                <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-                <div class="card-img ">
-                  <div class="row p-0 m-0 resim-container ">
-                    <div class="col-3 p-0">
-                      <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                  <div class="col-3 p-0   col-img ">
-                    <img  src="{% static 'img/abdulsamet/city/127865179.jpg' %}" class="img-fluid " alt="...">
-      
-                  </div>
-                 </div> 
-                </div>
-            </div>
-              <div class="col-lg-5 col-md-12" data-price="1.100">
-                <div class="card-body">
-                  <h5 class="card-title   "><a href="">Cityloft 161</a></h5>
-                  <p class="card-text">
-                    <a href=""
-                      ><i class="fa-sharp fa-solid fa-location-dot me-1"></i
-                      >Ataşehir,İstanbul-Haritada Görüntüle
-                    </a>
-                  </p>
-                  <p class="card-text">
-                    <div class="tooltips w-100 ">
-                      <ul class="d-flex">
-                        <li>Havaalanı transferi</li>
-                        <li>Ücretsiz Wifi</li>
-                        <li>+6</li>
-                      </ul>
-                      <div class="tooltiptext"> 
-                        <div class="row    ">
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Hava alanı transferi
-                          </div>
-                          <div class="col-6  text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Bavul hizmeti
-                          </div>
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>24 saat resepsiyon
-                          </div>
-                          <div class="col-6 text-start">
-                            <i class="fa-solid fa-check me-2" style="color: #20511f;"></i>Her odada ücretsiz wifi
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </p>
-                  <p class="card-text">
-                    "Otelinizi gerçekten çok beğendim"
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12">
-                <div class="card-body h-100 Evaluation">
-                  <div class=" card-text text-start">
-                    <div class="evaluation d-flex justify-content-start justify-content-lg-center  ">
-                      <div class=" card-text text-start">
-                        <h5 class="">Çok iyi</h5>
-                        <p>123 Değerlendirme</p>
-                      </div>
-                      <svg class="ms-4"  width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 jUloin Box-sc-kv6pi1-0 cjESZE" style="transform: none;">
-                        <path d="M1.199 3.053H21.99a1.5 1.5 0 0 1 1.5 1.5v14.983a1.5 1.5 0 0 1-1.5 1.5H4.53a1.5 1.5 0 0 1-1.5-1.5V8.333a.5.5 0 0 0-.1-.3L.399 4.653a1 1 0 0 1 .8-1.6zm0 1l2.53 3.381c.195.26.3.575.3.9v11.202a.5.5 0 0 0 .5.5H21.99a.5.5 0 0 0 .5-.5V4.553a.5.5 0 0 0-.5-.5H1.2z"></path> 
-                        <text x="50%" y="50%" dy=".35em" text-anchor="middle" fill="#333" style="font-size: 8px;">5.2</text>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="price text-lg-center  text-md-start pt-xl-5 mt-xl-5  mt-lg-0 ">
-                    <h5>Ortalama Fiyat</h5>
-                    <span class="text-danger fw-bold mt-1">1100 Tl</span> <br>
-                    <a href="" class="btn btn-primary mt-2   " style="font-size: 10px;">Müsaitlik Durumunu Kontrol Et</a>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+         
          </div>
          <button class="btn btn-primary w-100" >İstanbul Şehrindeki Tüm Otelleri Görüntüle</button>
         </div>
@@ -1979,35 +1715,9 @@
      </div>
     </section>
 
-    <!-- loading -->
-    <div class="loading " id="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   
     {% block js %}
-      <script>
-        $(document).ready(function() {
-            // Sayfa tamamen yüklendiğinde loader'ı gizle
-            $(window).on("load", function() {
-              $("#loader").fadeOut("slow");
-            });
-        
-            // Sayfa yüklenirken loader'ı görünür kıl
-            $(document).ajaxStart(function() {
-              $("#loader").fadeIn("slow");
-            });
-        
-            // Sayfa yüklendikten sonra loader'ı gizle
-            $(document).ajaxStop(function() {
-              $("#loader").fadeOut("slow");
-            });
-          });
-          
-      </script>
+     
     {% endblock js %}
      
      

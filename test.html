@@ -143,6 +143,34 @@
       padding: 10px;
       color: white;
     }
+
+    .custom-nav {
+      text-align: center;
+      margin-top: 10px; /* İstediğiniz mesafe ayarı */
+    }
+    
+    .custom-prev, .custom-next {
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: none;
+    }
+    
+    .custom-dots {
+      text-align: center;
+      margin-top: 10px; /* İstediğiniz mesafe ayarı */
+    }
+    
+    .custom-dot {
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: none;
+    }
+    
+  
   </style>
   </head>
   <body>
@@ -266,6 +294,32 @@
 
    </div>
 
+   
+   <div class="container">
+    <div class="custom-nav">
+      <button class="custom-prev">Previous</button>
+      <button class="custom-next">Next</button>
+    </div>
+    
+    <div class="owl-carousel">
+      <div>1</div>
+      
+      <!-- Daha fazla slayt ekleyebilirsiniz -->
+    </div>
+    
+    <div class="custom-dots">
+    
+      
+      <!-- Daha fazla dot ekleyebilirsiniz -->
+    </div>
+    
+   </div>
+
+
+
+
+
+
     <!-- jquery cdn -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -281,10 +335,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
    <!-- owl courosel -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="app.js"></script>
+    
     <script>
       $(".datepicker").datepicker();
-
+      $(document).ready(function(){
+        var owl = $('.owl-carousel');
+      
+        owl.owlCarousel({
+          items: 1,
+          loop: true,
+          nav: false,
+          dots: false,
+          autoplay: true
+        });
+      
+        // Slayt sayısına göre custom dots ekleyin
+        var slideCount = owl.find('.owl-item').length;
+        for (var i = 0; i < slideCount; i++) {
+          var dotText = 'yorum ' + (i + 1);
+          $('.custom-dots').append('<button class="custom-dot">' + dotText + '</button>');
+        }
+      
+        // Custom dot'lara tıklanınca ilgili slayta geçiş yapın
+        $('.custom-dot').click(function() {
+          var dotIndex = $(this).index();
+          owl.trigger('to.owl.carousel', [dotIndex, 300]);
+        });
+      });
       
     </script>
   </body>

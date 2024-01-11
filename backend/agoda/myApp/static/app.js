@@ -224,4 +224,28 @@ $(window).scroll(function () {
     $(".profilecard").css("background", "white");
   
    });
+
+   $(document).ready(function() {
+    // Function to handle checkbox change event
+    $(".star-checkbox").change(function() {
+      // Get the selected star rating
+      var selectedStar = $(this).data("star");
+  
+      // Uncheck all other checkboxes
+      $(".star-checkbox").not(this).prop("checked", false);
+  
+      // Show or hide hotel cards based on the selected star rating
+      $(".card[data-star]").each(function() {
+        var hotelStar = $(this).data("star");
+        if (selectedStar == "all" || hotelStar == selectedStar) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  
+    // Initially show all hotel cards
+    $(".card[data-star]").show();
+  });
   
