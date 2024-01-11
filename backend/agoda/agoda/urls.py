@@ -19,11 +19,13 @@ from myApp.views import*
 from AppUser.views import*
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",index,name="index"),
+    path("city/",city,name="city"),
     path("login/",login,name="login"),
     path("register/",register,name="register"),
-    path("detay/",detail,name="detail"),
+    path("detay/<Cardid>",detail,name="detay"),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

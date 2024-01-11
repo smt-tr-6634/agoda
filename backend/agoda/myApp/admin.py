@@ -10,3 +10,4 @@ class CardAdmin(admin.ModelAdmin):
     inlines = [AdditionalImageInline]
 
 admin.site.register(hotel, CardAdmin)
+admin.site.register(AdditionalImage)

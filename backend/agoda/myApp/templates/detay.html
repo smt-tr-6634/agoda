@@ -4,9 +4,9 @@
 {% block css %}
 <style>
   img {
-    padding: 5px;
+    padding: 3px;
   }
-
+  
   .cizgi {
     border-bottom: 3px solid rgba(42, 41, 41, 0.233);
     width: 95%;
@@ -178,37 +178,22 @@
 <!-- test1 -->
 <div class="container">
 
-    <div class="row">
+  <div class="row p-0 m-0" >
       <div class="col-lg-4 col-12 p-0">
      
-        <img src="{% static 'img/meric/img/2012165_17022417410051236928 (1).jpg' %}" class=" img-fluid h-auto w-100" alt="">
+        <img src="{{ hotels.mainimg.url }}" class=" w-100" height="400" alt="dadad">
+        
       </div>
-      <div class="col-lg-8 col-12 p-0 ps-2 ">
-        <div class="row ">
-          <div class="col-4 p-0  ">
-            <img src="{% static 'img/meric/img/2012165_17022713240051266236 (1).jpg' %}" class="img-fluid h-100" alt="">
+      <div class="col-lg-8 col-12 p-0  h-100 " >
+        <div class="row p-0 m-0">
+          {% for i in imgs %}
+          <div class="col-lg-3 p-0 col-md-4 col-sm-6 ">
+            <img src="{{i.image.url}}" class="w-100 "  height="200" alt="">
             
           </div>
-          <div class="col-4  p-0  ">
-            <img src="{% static 'img/meric/img/2012165_17022417410051236930.jpg' %}" class="img-fluid h-100" alt="">
-            
-          </div>
-          <div class="col-4  p-0 ">
-            <img src="{% static 'img/meric/img/2012165_17062415180054056309.jpg' %}" class="img-fluid h-100" alt="">
-            
-          </div>
-          <div class="col-4  p-0  ">
-            <img src="{% static 'img/meric/img/2012165_17022713290051266446 (1).jpg' %}" class="img-fluid h-100" alt="">
-            
-          </div>
-          <div class="col-4  p-0  ">
-            <img src="{% static 'img/meric/img/2012165_17022713360051266720.jpg' %}" class="img-fluid h-100" alt="">
-            
-          </div>
-          <div class="col-4  p-0 ">
-            <img src="{% static 'img/meric/img/a78e13bc52e7e3f3338c64444bd49d98.jpg' %}" class="img-fluid h-100" alt="">
-
-          </div>
+          {% endfor %}
+          
+         
 
         </div>
       </div>
@@ -262,17 +247,15 @@
           <div class="col-12 p-0 mt-3">
             <div class="card w-100">
               <div class="card-body">
-                <h5 class="card-title">Cityloft 81
+                <h5 class="card-title"> {{hotels.hotelname}}
                 </h5>
-                <p class="card-text">Kayışdağı Caddesi No185, Ataşehir, İstanbul, Türkiye, 34755 - HARİTADA GÖRÜN</p>
+                <p class="card-text"> <a href=" {{hotels.hotellocationmap}} " style="text-decoration: none;"> {{hotels.hotellocation}} haritada görmek için tıklayın </a> </p>
 
                 <div class="cizgi"></div>
 
-                <p class="card-text">Otopark ve Wi-Fi her zaman ücretsizdir, yani istediğiniz zaman bağlanabilir ve
-                  aracınızla dilediğiniz zaman giriş-çıkış yapabilirsiniz. İstanbul şehrinin Ataşehir bölgesinde yer
-                  alan bu tesis görülmesi gereken yerlere ve ilgi çekici yemek seçeneklerine yakın konumdadır. Ünlü
-                  Ayasofya cazibe noktasını görmeden şehirden ayrılmayın. 4 yıldızlı bu yüksek kaliteli tesis
-                  konuklarına masaj, restoran ve spa sunar.</p>
+                <p class="card-text">
+                  {{hotels.hoteltitle}}
+                </p>
 
               </div>
             </div>
@@ -414,7 +397,19 @@
             <div class="card-body">
               <div class="">
                 <div class="div text-start ms-3">
-                  <p class="card-text yazi"><b>7,4 Çok İyi</b>
+                  <p class="card-text yazi"><b>
+                    {% if hotels.rating is not None %}
+                    {% if hotels.rating < 5 %}
+                      {{hotels.rating}} Kötü
+                    {% elif 5 <= hotels.rating < 8 %}
+                    {{hotels.rating}}  Güzel
+                    {% elif 8 <= hotels.rating < 9 %}
+                    {{hotels.rating}} Çok İyi
+                    {% elif 9 <= hotels.rating <= 10 %}
+                    {{hotels.rating}} Mükemmel
+                    {% endif %}
+                {% endif %}
+                  </b>
                   </p>
 
                 </div>
@@ -470,12 +465,21 @@
           <div class="card w-100">
             <div class="card-body">
               <div class="">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34079.094863442624!2d29.12601332183396!3d40.97721323586524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac5fcfba811db%3A0x2b9323a30530950f!2sCityloft%2081%20Hotels!5e0!3m2!1str!2str!4v1703078834864!5m2!1str!2str"
-                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              {{hotels.hotellocationmapbox|safe}}
                 <div class="div text-start ms-3">
-                  <p class="card-text yazi"><b>7,0 Çok İyi</b>
+                  <p class="card-text yazi"><b>
+                    {% if hotels.rating is not None %}
+                    {% if hotels.rating < 5 %}
+                      {{hotels.rating}} Kötü
+                    {% elif 5 <= hotels.rating < 8 %}
+                    {{hotels.rating}}  Güzel
+                    {% elif 8 <= hotels.rating < 9 %}
+                    {{hotels.rating}} Çok İyi
+                    {% elif 9 <= hotels.rating <= 10 %}
+                    {{hotels.rating}} Mükemmel
+                    {% endif %}
+                {% endif %}
+                  </b>
                   </p>
 
                 </div>
@@ -676,7 +680,7 @@
               <p>Konum puanı </p>
             </div>
             <div class="col-6 mt-2">
-              <p>7,0</p>
+              <p>8,0</p>
             </div>
           </div>
 
@@ -1009,46 +1013,15 @@
 
     <div class="row">
       <div class="col-lg-12">
+        
         <div class="card mb-3">
-          <img src="{% static 'img/meric/img/2012165_17022417410051236930.jpg ' %} " class="card-img-top " height="300" alt="...">
+      
           <div class="card-body">
-            <h5 class="card-title">Cityloft 81</h5>
 
-            <p class="card-text"><small class="text-body-secondary">Cityloft 81, sunduğu huzurlu ve telaşsız konaklama
-                imkanıyla İstanbul seyahatiniz için akıllıca bir seçimdir.
-                Cityloft 81 konukları stressiz bir konaklama deneyimi yaşar. Konaklamanız boyunca ücretsiz Wi-Fi
-                sayesinde iletişimlerinizi sürdürebilirsiniz. Daha tesise bile varmadan, giriş ve çıkış tarihleriniz
-                için havaalanı transferleri ayarlayabilirsiniz. Burada sunulan taksi hizmeti sayesinde İstanbul şehrini
-                daha kolay keşfedin.
-                Arabayla gelen konuklar ücretsiz otoparktan faydalanabilir. Bu muhteşem otel konaklamanızda size yardıma
-                hazır resepsiyon personelinden hızlı check-in veya check-out ve konsiyerj hizmeti dahil çeşitli
-                hizmetler alabilirsiniz. Bu muhteşem otel konaklamanızda soğuk günlerde ve gecelerde şömineyle sıcacık
-                bir ortamda keyifli vakit geçirebilirsiniz. Cityloft 81 bünyesindeki çamaşır yıkama hizmeti ve kuru
-                temizleme hizmeti hizmetleri sayesinde en sevdiğiniz kıyafetlerinizi istediğiniz her zaman
-                giyebilirsiniz.
-                Canınız hiçbir şey yapmak istemiyor mu? 24 saat oda servisi, günlük kat hizmetleri ve oda servisi gibi
-                hizmetler sayesinde Cityloft 81 otelinde zamanınızı en iyi şekilde değerlendirebilirsiniz. Sadece otel
-                tarafından belirlenen sigara içme alanlarında sigara içilebilir.
-                Cityloft 81 konaklamanızda kendinizi evinizde hissedeceksiniz. Bazı odalar konforunuz için nevresim
-                hizmeti ve klima ile donatılmıştır. Balkon veya teras ve ayrı oturma odası bulunan çeşitli oda
-                seçenekleri sunan Cityloft 81 otelinde her konaklama farklı bir deneyim. Bazı odalarda konukların
-                eğlenmesi için televizyon ve kablo TV bulunur.
-                Bazı odalarda şişe su, kahve veya çay makinesi, hazır kahve, minibar ve poşet çay bulunduğu bilmek
-                hoşunuza gidecek. Banyo malzemeleri de diğer olanaklar kadar önemlidir ve otel için bazı banyolardasaç
-                kurutma makinesi, banyo malzemeleri, havlular ve bornozlar sunulmaktadır.<br><br>
-
-
-                Tesisin çevresi<br>
-
-                Elverişli konumuyla otel, İstanbul şehrinin her noktasına kolay erişim imkanı sunar. 13,8 km mesafedeki
-                Topkapı Sarayı konumunda bir öğleden sonra dolaşıp yerel sanat eserlerini keşfedebilirsiniz.<br><br>
-
-
-                Burada konaklamanız için nedenler<br>
-
-                Bu tesisin odaları şehirdeki tesislerin %98 kadarından daha ucuz.
-                Bu otel için verilen yiyecek-içecek puanı şehirdeki konaklama yerlerinin %95 kadarından daha yüksek.
-                Bu tesisin oda konforu için aldığı puan şehirdeki rakiplerinin %95 kadarından daha yüksek.</small></p>
+            <p class="card-text">
+               
+               {{hotels.content|safe}}
+               </p>
           </div>
         </div>
 

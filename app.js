@@ -221,3 +221,4 @@ $(".edit").click(function (e) {
   $(".profilecard").css("background", "white");
 
  });
+
