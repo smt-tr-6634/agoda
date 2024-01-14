@@ -24,7 +24,7 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("city/",city,name="city"),
-    path("login/",login,name="login"),
+    path("login/",login_user,name="login"),
     path("register/",register,name="register"),
     path("endyear/", endyearPage, name="endyear"),
     path("eliteoffers/", eliteoffersPage, name="eliteoffers"),
@@ -34,5 +34,6 @@ urlpatterns = [
     path("reservation/", reservationPage, name="reservation"),
     path("chance/", chancePage, name="chance"),
     path("detay/<Cardid>",detail,name="detay"),
+    path("userprofile/",userProfile,name="userprofile"),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
