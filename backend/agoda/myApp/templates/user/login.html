@@ -231,50 +231,59 @@
         <span class="title">Giriş Yap</span>
         <p>Güvenliğiniz için, bilgilerinizi görmek için lütfen hesabınıza giriş yapın</p>
         <div class="div-login">
-            <a href="" class=" a-active text-center   p-2 "  data-form="eposta"  >E-Posta</a>
+            <a href="" class=" a-active text-center   p-2 " name="email" data-form="eposta"  >E-Posta</a>
             <a href="" class=" text-center   p-2 "  data-form="mobil"  >Mobil </a>
         </div>
-        <form class="form form-login-email   animate__animated animate__fadeIn   ">
+        <form class="form form-login-email   animate__animated animate__fadeIn   " method="POST">
+          {% csrf_token %}
           <div class="group">
-          <input placeholder="‎" type="text" required="">
+          <input placeholder="‎" type="text" name="email" required="">
           <label for="name">Email Girin</label>
           </div>
         
             <div class="group">
-              <input class="password1" placeholder="‎" type="password" required="">
+              <input class="password1"  name="password" placeholder="‎" type="password" required="">
               <label for="name">Şifre Girin</label>
               </div>
              
                               
-          <button   type="submit">Giriş Yap</button>
+          <button   type="submit" name="button"  value="email" >Giriş Yap</button>
+          {% if hata %}
+          <div class="alert alert-danger mt-3" role="alert">
+            {{hata}}
+          </div>
+          {% endif %}
           <div class="div d-flex justify-content-between mt-4">
             <a href="" class="text-decoration-none" ><span>Hesap Oluştur</span></a>
             <a href="" class="text-decoration-none" ><span>Şifremi Unuttum</span></a>
           </div>
         </form>
-        <form class="form form-login-mobil  animate__animated animate__fadeIn ">
-          <div class="row">
-            <div class="col-3">
-
+        <form class="form form-login-mobil  animate__animated animate__fadeIn " method="POST" >
+          {% csrf_token %}
+          <div class="group">
+            <input placeholder="‎" name="phone" type="number" required="">
+            <label for="name">telefon</label>
             </div>
-          </div>
-          
             <div class="group">
-              <input placeholder="‎" type="number" required="">
-              <label for="name">telefon</label>
+              <input class="password1"  name="password" placeholder="‎" type="password" required="">
+              <label for="name" >Şifre Girin</label>
               </div>
-              <div class="group">
-                <input class="password1" placeholder="‎" type="password" required="">
-                <label for="name">Şifre Girin</label>
+              <button   type="submit" name="button" value="mobil" >Giriş Yap</button>
+              {% if hata %}
+              <div class="alert alert-danger mt-3" role="alert">
+                {{hata}}
+              </div>
+              {% endif %}
+              <div class="div d-flex justify-content-between mt-4">
+                  <a href="" class="text-decoration-none" ><span>Hesap Oluştur</span></a>
+                  <a href="" class="text-decoration-none" ><span>Şifremi Unuttum</span></a>
                 </div>
+        </form>
+           
                
                                 
-            <button   type="submit">Giriş Yap</button>
-            <div class="div d-flex justify-content-between mt-4">
-                <a href="" class="text-decoration-none" ><span>Hesap Oluştur</span></a>
-                <a href="" class="text-decoration-none" ><span>Şifremi Unuttum</span></a>
-              </div>
-          </form>
+           
+          
           <div class="row mt-5">
             <div class="col-3 "> <hr> </div>
             <div class="col-6  text-center align-self-center  "> <p class="text" >veya şu hesabınızla oturum açın</p> </div>
@@ -303,5 +312,5 @@
 
 {% endblock body %}
 {% block js %}
-  
+
 {% endblock js %}

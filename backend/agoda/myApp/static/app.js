@@ -183,7 +183,7 @@ $(window).scroll(function () {
   });
   
   // login
-  $(".form-login-mobil").show();
+  $(".form-login-mobil").hide();
   $(".div-login a").click(function (e) {
     e.preventDefault();
   
