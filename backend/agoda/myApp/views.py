@@ -29,7 +29,6 @@ def detail(request,Cardid):
     hotels=hotel.objects.get(id=Cardid)
     imgs = AdditionalImage.objects.filter(hotels=hotels)
     comments=comment.objects.filter(hotelscom=hotels)
-    userinfos = userinfo.objects.get(user=request.user)
   
 
 
@@ -55,7 +54,7 @@ def detail(request,Cardid):
                total_price = int(person) * hotels.discounted_price
             else:
               total_price = int(person) * hotels.price
-            bask = baskets(user=userinfos, hotel=hotels, total_price=total_price ,date=dates)
+            bask = baskets(user=request.userinfos, hotel=hotels, total_price=total_price ,date=dates)
             bask.save()
             
     context = {"hotels": hotels ,"imgs":imgs ,"comments":comments }
@@ -76,53 +75,4 @@ def endyearPage(request):
 
      context = {"hotel_data": hotel_data}
     
-     return render(request, "endyear.html", context)
-    
-
-
-
-def eliteoffersPage(request):
-    
-    context={}
-    
-    return render(request, "eliteoffers.html", context)
-
-
-
-def paylessPage(request):
-    
-    context={}
-    
-    return render(request, "payless.html", context)
-
-
-
-def staylongerPage(request):
-    
-    context={}
-    
-    return render(request, "staylonger.html", context)
-
-
-
-def dealsPage(request):
-    
-    context={}
-    
-    return render(request, "deals.html", context)
-
-
-
-def reservationPage(request):
-    
-    context={}
-    
-    return render(request, "reservation.html", context)
-
-
-
-def chancePage(request):
-
-    context={}
-    
-    return render(request, "chance.html", context)
+     return render(request, "endyear.html", context)  
