@@ -183,7 +183,9 @@
                
         
                     <div class="row">
+                      
                         {% for i in hotel_data %}
+                        {% if i.hotel.discounted_price is not none %}
                         <div class="col-xxl-3 mt-3 col-lg-4 col-md-6 col-sm-12">
                           <a href="">
                             <div class="card">
@@ -212,14 +214,16 @@
                                 
                                 <div class="information-price text-end">
                                   <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>TL 6.804</strike></div>
-                                  <div class="total-price text-danger">TL 3.281</div>
+                                  <div class="price-crossout text-secondary"><strike>{{i.hotel.price}}  </strike></div>
+                                  <div class="total-price text-danger">  {{i.hotel.discounted_price}}  </div>
                                 </div>
                               </div>
                             </div>
                           </a>
                       </div>
                        
+                        {% endif %}
+                      
                         {% endfor %}
                       
                         

@@ -11,3 +11,4 @@ class CardAdmin(admin.ModelAdmin):
 
 admin.site.register(hotel, CardAdmin)
 admin.site.register(AdditionalImage)
+admin.site.register(comment)
