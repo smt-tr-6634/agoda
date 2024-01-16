@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-
+from myApp.models import*
 from .models import *
 
 
@@ -101,6 +101,11 @@ def register(request):
 def userProfile(request):
     user=User.objects.get(id=request.user.id)
     userinfos=userinfo.objects.get(user=user)
+    try:
+         basket=baskets.objects.get(user=userinfos)
+    except baskets.DoesNotExist:
+        basket = None
+  
 
     if request.method=="POST":
         name=request.POST.get("name")
@@ -123,6 +128,6 @@ def userProfile(request):
         login(request,user)
 
         return redirect("userprofile")
-    context={"userinfos":userinfos,}
+    context={"userinfos":userinfos, "basket":basket}
 
     return render(request,"user/userprofile.html",context)

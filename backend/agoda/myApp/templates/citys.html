@@ -748,16 +748,18 @@
          <div class="card-container">
           
           {% for i in hotel_data %}
+          <span>indiirm oroanı:  </span>
           <div class="card  mb-3   " data-price="{{i.hotel.price}}"                        data-rating="{{i.hotel.rating}}" data-star="{{i.hotel.star}}"  >  
             <div class="row g-0">
               <div class=" col-lg-4 col-md-12 p-0 p-2 ">
-                <img  src="{{i.hotel.mainimg.url}}" class="img-fluid " alt="...">
+                <img  src="{{i.hotel.mainimg.url}}" class="img-fluid w-100" alt="...">
                 <div class="card-img ">
                   <div class="row p-0 m-0 resim-container ">
                     {% for image in i.images %}
                     <div class="col-3 p-0   col-img ">
                         <img src="{{ image.image.url }}" class="img-fluid" alt="...">
                     </div>
+                    
                 {% endfor %}
                   
     
@@ -811,8 +813,13 @@
                     
                   </p>
                   <p class="card-text">
-                    "Otelinizi gerçekten çok beğendim"
+                    {% if i.latest_comments.text %}
+                    "{{ i.latest_comments.text }}"
+                      {% else %}
+                      Henüz Yorum Yapılmamış
+                    {% endif %}
                   </p>
+                  
                 </div>
               </div>
               <div class="col-lg-3 col-md-12">

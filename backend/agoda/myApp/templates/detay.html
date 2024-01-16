@@ -386,9 +386,42 @@
               </div>
             </div>
           </div>
+          <div class="col-12 p-0">
+            <button type="button" class="btn btn-primary mt-3 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" >rezervasyon yap</button>
+            <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+          <div class="input-group mb-3">
+            <span class="mt-3 mb-1">Kişi Sayısı:</span>
+            <input type="text" name="person" class="form-control w-100  roundet-1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <span class="mt-3 mb-1">Tarih:</span>
+            <input type="date" name="date" class="form-control w-100  roundet-1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="submit" name="button" value="reservation" class="btn btn-primary">Rezervasyonu Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+          </div>
         </div>
 
-
+          
       </div>
 
       <div class="col-lg-4 p-0">
@@ -2129,20 +2162,35 @@
                 </li>
               </ul>
             </nav>
+         
           </div>
         </div>
       </div>
 
       <div class="cizgi w-100 mt-3"></div>
 <div class="card-container">
-<div class="card p-2 m-3"  data-rating="7.8"  >
+{% for i in comments %}
+<div class="card p-2 mt-3 mb-3 "  data-rating="{{i.rating }}"  >
   <div class="row">
 
     <div class="col-lg-4 mt-3 ">
-      <p class="mt-1 text-primary kusursuz"> 7.8 Kusursuz</p>
-      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Onurcan</p>
-      <p class="mt-1 kusursuz2 p-0">Çift</p>
-      <p class="mt-1 kusursuz2 p-0">Jakuzili Süit
+      <p class="mt-1 text-primary kusursuz"> 
+          
+        {% if i.rating is not None %}
+        {% if i.rating < 5 %}
+           {{i.rating}} İyi
+        {% elif 5 <= i.rating < 8 %}
+        {{i.rating}} Güzel
+        {% elif 8 <= i.rating < 9 %}
+        {{i.rating}} Çok İyi
+        {% elif 9 <= i.rating <= 10 %}
+        {{i.rating}} Mükemmel
+        {% endif %}
+    {% endif %}
+
+      </p>
+      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan  {{i.user.username}} </p>
+      
       </p>
       <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
       </p>
@@ -2152,13 +2200,12 @@
       <div class="card mb-3">
 
         <div class="card-body">
-          <h5 class="card-title">"Verimli bir konaklama"
+          <h5 class="card-title">"{{i.title}}"
           </h5>
-          <p class="card-text">Kız arkadaşım ile birlikte iki kişi konakladık, temiz güzel düzeni olan istanbul
-            içerisinde agoda üzerinden iyi fiyatlı tatmin edici bir konaklamaydı biz memnun kaldık
-
+          <p class="card-text">
+             {{i.text}}
           </p>
-          <p class="card-text"><small class="text-body-secondary">22 Aralık 2023 tarihinde yazıldı
+          <p class="card-text"><small class="text-body-secondary">{{i.date}} tarihinde yazıldı
             </small></p>
         </div>
       </div>
@@ -2173,136 +2220,54 @@
 
   </div>
 </div>
-
-<div class="card p-2 m-3"  data-rating="5.8"  >
-  <div class="row">
-
-    <div class="col-lg-4 mt-3 ">
-      <p class="mt-1 text-primary kusursuz">5.6</p>
-      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Tugba</p>
-      <p class="mt-1 kusursuz2 p-0">Çift</p>
-      <p class="mt-1 kusursuz2 p-0">Standart Çift Kişilik Oda
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
-
-
-      </p>
-    </div>
-
-    <div class="col-lg-8 mt-5">
-      <div class="card mb-3">
-
-        <div class="card-body">
-          <h5 class="card-title">"temizlik çok kötü"
-          </h5>
-          <p class="card-text">internette aldığımız oda ile verilen oda başkaydı. halılar pis ve lekeliydi, banyonun tepedeki duş başlığı bozuktu ve sıcak su 7-8 dk sonra geliyordu. Diğer city loft otellerinde kaldığımızda gayet iyiydi ama 81 kesinlikle kötü. boşuna paranızı harcamayın.
-
-          </p>
-          <p class="card-text"><small class="text-body-secondary">21 Aralık 2023 tarihinde yazıldı
-
-            </small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-12">
-      <div class="col-lg-12 d-flex justify-content-end ">
-        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
-        <p class="ms-2 text-primary">EVET|HAYIR</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card p-2 m-3"  data-rating="5,2"  >
-  <div class="row">
-
-    <div class="col-lg-4 mt-3 ">
-      <p class="mt-1 text-primary kusursuz">5,2</p>
-      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Evren
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Küçük çocuklu aile
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Jakuzili Süit
-
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde 2 gece kaldı
-
-      </p>
-    </div>
-
-    <div class="col-lg-8 mt-5">
-      <div class="card mb-3">
-
-        <div class="card-body">
-          <h5 class="card-title">"Ortalamanın üstünde"
-          </h5>
-          <p class="card-text">Otel belli ki zamanın iyi bir tesisi imiş.Fakat bir hayli bakımsız ve kirliydi maalesef.Yeni bir tamirat-tadilat ile çok daha iyi olacaktır eminim.Odası gayet güzeldi zira fakat bakımsız ve çok temiz değildi.
-
-
-
-          </p>
-          <p class="card-text"><small class="text-body-secondary">18 Aralık 2023 tarihinde yazıldı
-
-            </small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-12">
-      <div class="col-lg-12 d-flex justify-content-end ">
-        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
-        <p class="ms-2 text-primary">EVET|HAYIR</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card p-2 m-3"  data-rating="2,4"  >
-  <div class="row">
-
-    <div class="col-lg-4 mt-3 ">
-      <p class="mt-1 text-primary kusursuz">2,4</p>
-      <p class="mt-1 kusursuz2 p-0">Türkiye konumundan Arzu
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Tek seyahat edenler
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Standart Çift Kişilik Oda
-
-      </p>
-      <p class="mt-1 kusursuz2 p-0">Aralık 2023 tarihinde bir gece kaldı
-
-      </p>
-    </div>
-
-    <div class="col-lg-8 mt-5">
-      <div class="card mb-3">
-
-        <div class="card-body">
-          <h5 class="card-title">"1 gece kalamadim"
-          </h5>
-          <p class="card-text">1700tl ye yakin (kahvalti haric) odada 1 gece kalamadim.10m2 en berbat kucuk odayi vermisler. Bir aynali masasi yok, karyoladan ayagin duvara carpiyor bu kadar igrenc bir yer. Hic kimseye tavsiye etmiyorum. Burada kalamayacahim bu sartlarda dememe ragmen suratima bakiyorlar hic kimse ilgilenmedi. Param cope gitti. Haram zikkim olsun bu otele
-
-          </p>
-          <p class="card-text"><small class="text-body-secondary">02 Ocak 2024 tarihinde yazıldı
-            </small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-12">
-      <div class="col-lg-12 d-flex justify-content-end ">
-        <p>Bu değerlendirmeyi yararlı buldunuz mu? </p>
-        <p class="ms-2 text-primary">EVET|HAYIR</p>
-      </div>
-    </div>
-
-  </div>
-</div>
+{% endfor %}
+{% if request.user.is_authenticated %}
   
-</div>
+<form action=""  method="POST" >
+  {% csrf_token %}
+  <div class="card mt-3 mb-3 p-3">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+        <input type="text" name="name" class="form-control" placeholder="isim" aria-label="First name" value="{{request.user.username}}">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+        <input type="text" name="email" class="form-control" placeholder="email" aria-label="Last name" value="{{request.user.email}}">
+      </div>
+      <div class="col-lg-4 col-md-12 mt-3">
+        <input type="text" name="title" class="form-control" placeholder="başlık" aria-label="Last name">
+      </div>  
+          
+     <div class="col-12 mt-3">
+      <span>Yorumunuzu Yazınız</span>
+     
+      <textarea class="form-control mt-3" name="text" style="min-height: 200px;" aria-label="With textarea"></textarea>
+      <input type="hidden" id="ogunku_tarih"  name="date" value="">
+  
+  
+     </div>
+   
+    
+  </div>
+ <div class="rating mt-3 ">
+  <span class="d-block mt-3">Değerlendirme Puanınız</span>
+  <select class="mt-3 w-25" name="rating">
+   
+    <option   value="1">1</option>
+    <option   value="2">2</option>
+    <option   value="3">3</option>
+    <option   value="4">4</option>
+    <option   value="5">5</option>
+    <option   value="6">6</option>
+    <option   value="7">7</option>
+    <option   value="8">8</option>
+    <option   value="9">9</option>
+    <option   value="10">10</option>
+  </select>
+ </div>
+  <button  type="submit" name="button" value="comment" class="btn btn-primary mt-3">Yorumu Gönder</button>
+  </div>
+</form>
+{% endif %}
 
       
 
@@ -2481,5 +2446,16 @@ $(document).ready(function () {
 
     cardsContainer.empty().append(cards);
   }
+  
+    $(document).ready(function() {
+        // Sayfa yüklendiğinde çalışacak kod
+        var today = new Date();
+        var formattedDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        
+        // Input alanına değeri ekleyelim
+        $('#ogunku_tarih').val(formattedDate);
+
+           console.log(formattedDate)
+    });
 </script>
 {% endblock js %}
