@@ -101,8 +101,10 @@ def register(request):
 def userProfile(request):
     user=User.objects.get(id=request.user.id)
     userinfos=userinfo.objects.get(user=user)
+    cancel_reservations=Deletereservation.objects.filter(user=user)
+    comments=comment.objects.filter(user=user)
     try:
-         basket=baskets.objects.get(user=userinfos)
+         basket = baskets.objects.filter(user=user)
     except baskets.DoesNotExist:
         basket = None
   
@@ -128,6 +130,30 @@ def userProfile(request):
         login(request,user)
 
         return redirect("userprofile")
-    context={"userinfos":userinfos, "basket":basket}
+    context={"userinfos":userinfos, "basket":basket,"cancel_reservations":cancel_reservations,"comments":comments}
 
     return render(request,"user/userprofile.html",context)
+
+def cancel_reservation(request, reservation_id):
+    try:
+        reservation = baskets.objects.get(id=reservation_id)
+        silinen_rezervasyon = Deletereservation(
+            user=reservation.user,
+            hotel=reservation.hotel,
+            total_price=reservation.total_price,
+            date=reservation.date,
+            person=reservation.person,
+        )
+        silinen_rezervasyon.save()
+        reservation.delete()
+        messages.success(request, 'Rezervasyon başarıyla iptal edildi.')
+    except baskets.DoesNotExist:
+        messages.error(request, 'Rezervasyon bulunamadı.')
+
+    return redirect('userprofile')
+
+def delete_comments(request ,comid):
+
+    com=comment.objects.get(id=comid)
+    com.delete()
+    return redirect("userprofile")

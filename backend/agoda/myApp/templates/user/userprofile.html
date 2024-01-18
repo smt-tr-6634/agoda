@@ -10,7 +10,7 @@
         --text-detail-color: #737373;
         --acordion-color:#ececec;
       }
-    .user-section1 button{
+    .user-section1 .butons{
         border: none;
         background-color: white;
         transition: ease 0.2s;
@@ -18,7 +18,7 @@
         font-size: 18px;
         font-weight: 700;
     }
-    .user-section1 button:hover{
+    .user-section1 .butons:hover{
         border: none;
         background-color: var(--text-hovercolor);
         transition: ease 0.2s;
@@ -40,6 +40,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .cansel_reservation{
+      position: relative;
+    }
+    .cansel_reservation .cansel_rev{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #2a2a2e;
+      opacity: 0.9;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
     }
 
     @media (max-width: 1020px) {
@@ -134,14 +151,19 @@
        <section  class="user-section1 " >
           <div class="container">
               <div class="row">
-                  <div class="col-lg-3 col-12 Options p-0 pt-3
+                  <div class="col-lg-3 col-12 Options p-0 pt-3 sticky-top
                   ">
-              <button class="  text-start p-2 w-100    " > <i class="bi bi-person me-2"></i>Profil</button>
-              <button class="  text-start p-2 w-100    " > <i class="bi bi-calendar2-check me-2"></i>Rezervasyonlarım</button>
-              <button class="  text-start p-2 w-100    " > <i class="bi bi-chat-left-dots me-2"></i>Tesis Mesajları</button>
-              <button class="  text-start p-2 w-100    " > <i class="bi bi-star me-2"></i>Yorumlar</button>
+                  <button id="profilBtn" class="userpr text-start p-2 w-100 butons ">
+                    <i class="bi bi-person me-2"></i>Profil
+                </button>
+                <button id="rezervasyonBtn" class="text-start p-2 w-100 butons ">
+                    <i class="bi bi-calendar2-check me-2"></i>Rezervasyonlarım
+                </button>
+                <button id="yorumBtn" class="text-start p-2 w-100 butons ">
+                    <i class="bi bi-star me-2"></i>Yorumlar
+                </button>
                   </div>
-                  <div class="col-lg-9 col-12 pt-3">
+                  <div class="col-lg-9 col-12 pt-3 mb-5 userprofile animate__animated animate__fadeIn ">
                    <div class="container-fluid">
                     <h3>Kullanıcı Bilgileri</h3>
                     <div class="row mt-5">
@@ -193,21 +215,137 @@
                       </div>
                     </div>
                    </div>
+                   <div class="col-lg-9 col-12 pt-3 reservation animate__animated animate__fadeIn">
+                    <span class="fw-bold">Rezervasyonlarım:</span>
+                
+                   {% for i in basket  %}
+                   <div class="card mt-3" style="background-color: #e2e3e5;">
+                    <div class="row g-0 ">
+                      <div class="col-md-3 ">
+                        <img src="{{i.hotel.mainimg.url}}" class="img-fluid h-100 w-100 rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8 p-3  " >
+                      <p class="w-100 fw-bold" >Rezervasyon Yapılan Otel: 
+                        <span>    <a href="/detay/{{i.hotel.id}}"> {{i.hotel}} </a> </span>  </p>
+                        <hr>
+                        <p class="w-100 fw-bold" >Kişi sayısı: 
+                          <span>     {{i.person}}  </span>  </p>
+                          <hr>
+                          <p class="w-100 fw-bold" >Toplam Tutar: 
+                            <span>     ${{i.total_price}}  </span>  </p>
+                            <hr>
+                            <p class="w-100 fw-bold" >Rezervasyon Tarihi: 
+                              <span>     {{i.date}}  </span>  </p>
+                       
+                         
+                              <form method="post" action="{% url 'cancel_reservation' i.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger w-100 mt-1">İptal Et</button>
+                              </form>
+                              <button type="button" class="btn btn-primary w-100 mt-1">Ödeme Yap</button>
+                      </div>
+                    
+                    </div>
+                  </div>
+                   {% endfor %}
+
+                   {% for i in cancel_reservations %}
+                  
+                   <div class="card mt-3 cansel_reservation" style="background-color: #e2e3e5;">
+                   <div class="cansel_rev">
+                    <h2>Rezervasyon İptal Edildi</h2>
+                   </div>
+                    <div class="row g-0 ">
+                      <div class="col-md-3 ">
+                        <img src="{{i.hotel.mainimg.url}}" class="img-fluid h-100 w-100 rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8 p-3  " >
+                      <p class="w-100 fw-bold" >Rezervasyon Yapılan Otel: 
+                        <span>    <a href="/detay/{{i.hotel.id}}"> {{i.hotel}} </a> </span>  </p>
+                        <hr>
+                        <p class="w-100 fw-bold" >Kişi sayısı: 
+                          <span>     {{i.person}}  </span>  </p>
+                          <hr>
+                          <p class="w-100 fw-bold" >Toplam Tutar: 
+                            <span>     ${{i.total_price}}  </span>  </p>
+                            <hr>
+                            <p class="w-100 fw-bold" >Rezervasyon Tarihi: 
+                              <span>     {{i.date}}  </span>  </p>
+                       
+                         
+                              <form method="post" action="{% url 'cancel_reservation' i.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger w-100 mt-1">İptal Et</button>
+                              </form>
+                              <button type="button" class="btn btn-primary w-100 mt-1">Ödeme Yap</button>
+                      </div>
+                    
+                    </div>
+                  </div>
+                   {% endfor %}
+                  </div>
+                  <div class="col-lg-9 col-12 pt-3 comment animate__animated animate__fadeIn">
+                    <span class="fw-bold">Yorumlarınız:</span>
+                    {% if comments %}
+                    {% for i in comments %}
+                    <div class="card mt-3" >
+                      <div class="card-body">
+                        <h5 class="card-title"> {{i.hotelscom.hotelname}} </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> {{i.title}} </h6>
+                        <p class="card-text">
+                          {{i.text}}
+                        </p>
+                        <div class="d-flex ">
+                          <a href="/detay/{{i.hotelscom.id}}" class="btn btn-primary me-3  " style="font-size: 12px;">Yoruma Git</a>
+                        <form method="post" action="{% url 'delete_comments' comid=i.id %}">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-danger " style="font-size: 12px;">Yorumu Sil</button>
+                      </form>
+                        </div>
+                      
+                      </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                      <h2>Henüz Yorum Yapmadınız</h2>
+                    {% endif %}
+                    
+                  
+                  </div>
+                  </section>
+                   </div>
                   </div>
               </div>
           </div>
-       </section>
-    
-        <section>
+      
          
-          {{basket.user}}
-          {{basket.hotel}}
-          {{basket.total_price}}
-          {{basket.date}}
-        </section>
   
 
 {% endblock body %}
 {% block js %}
-  
+  <script>
+    $(".reservation, .comment").hide();
+    $(document).ready(function() {
+      // Profil butonuna tıklanınca
+      $("#profilBtn").click(function() {
+          // Profil içeriğini göster, diğerlerini gizle
+          $(".userprofile").show();
+          $(".reservation, .comment").hide();
+        });
+
+      // Rezervasyon butonuna tıklanınca
+      $("#rezervasyonBtn").click(function() {
+          // Rezervasyon içeriğini göster, diğerlerini gizle
+          $(".reservation").show();
+          $(".userprofile, .comment").hide();
+      });
+
+      // Yorum butonuna tıklanınca
+      $("#yorumBtn").click(function() {
+          // Yorum içeriğini göster, diğerlerini gizle
+          $(".comment").show();
+          $(".userprofile, .reservation").hide();
+      });
+  });
+  </script>
 {% endblock js %}

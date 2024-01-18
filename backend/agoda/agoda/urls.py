@@ -30,4 +30,6 @@ urlpatterns = [
     path("detay/<Cardid>",detail,name="detay"),
     path("userprofile/",userProfile,name="userprofile"),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('cancel_reservation/<int:reservation_id>/', cancel_reservation, name='cancel_reservation'),
+    path('delete_comment/<int:comid>/', delete_comments, name='delete_comments'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

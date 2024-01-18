@@ -5,6 +5,8 @@ from AppUser.models import*
 
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.contrib.auth.models import User
+
 
 
 def city(request):
@@ -49,12 +51,11 @@ def detail(request,Cardid):
             person=request.POST.get("person")
             dates=request.POST.get("date")
             
-
             if hotels.discounted_price is not None and hotels.discounted_price > 0:
                total_price = int(person) * hotels.discounted_price
             else:
-              total_price = int(person) * hotels.price
-            bask = baskets(user=request.userinfos, hotel=hotels, total_price=total_price ,date=dates)
+               total_price = int(person) * hotels.price
+            bask = baskets(user=request.user, hotel=hotels, total_price=total_price ,date=dates,person=person)
             bask.save()
             
     context = {"hotels": hotels ,"imgs":imgs ,"comments":comments }

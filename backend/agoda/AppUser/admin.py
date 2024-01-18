@@ -5,3 +5,4 @@ from.models import *
 
 admin.site.register(userinfo)
 admin.site.register(baskets)
+admin.site.register(Deletereservation)
