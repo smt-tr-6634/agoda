@@ -55,9 +55,10 @@ $(window).scroll(function () {
     // Sıralanmış kartları tekrar container'a ekle
     cardsContainer.empty().append(cards);
   }
-  
-  // owl courosel
-  $(".owl-carousel").owlCarousel({
+ 
+
+   // owl courosel
+   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
@@ -74,7 +75,6 @@ $(window).scroll(function () {
       },
     },
   });
-  
   // Custom Next Button
   $("#customNextBtn1").click(function () {
     $("#owl-carousel-1").trigger("next.owl.carousel");
