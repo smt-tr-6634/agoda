@@ -477,7 +477,7 @@
     <!-- ********************section 1******************************************************** -->
     <section class="section1">
       <div class="container search text-center w-100">
-        <h1>İstanbul, Türkiye konumunda otel bul</h1>
+        <h1> {{city.cityname}} , Türkiye konumunda otel bul</h1>
         <p>Toplam 13440 kiralık mülk ve otel mevcut</p>
         <div class="row p-3 row-search ">
           <div class="container">
@@ -594,7 +594,7 @@
     </section>
     <!-- ********************section2******************************************************** -->
     <section class="section2 container  mt-5">
-      <h1 class="text-center"  >İstanbul şehrindeki en iyi 10 otel</h1>
+      <h1 class="text-center"  >{{city.cityname}}  şehrindeki en iyi 10 otel</h1>
       <div class="row mt-5 d-flex justify-content-center">
         <div class="col-2 d-none d-lg-block">
           <div class="card p-3">
@@ -769,7 +769,7 @@
           {% endfor %}
          
          </div>
-         <button class="btn btn-primary w-100" >İstanbul Şehrindeki Tüm Otelleri Görüntüle</button>
+         <button class="btn btn-primary w-100" >{{city.cityname}}Şehrindeki Tüm Otelleri Görüntüle</button>
         </div>
       </div> 
     </section>
@@ -777,7 +777,7 @@
       <section class="section3 mt-5" >
         <div class="container">
           
-          <h4>İstanbul, Türkiye hakkında birkaç kısa bilgi</h4>
+          <h4>{{city.cityname}}, Türkiye hakkında birkaç kısa bilgi</h4>
           <table class="otel-table">
             <tr>
                 <td class="grey-background">Konaklama</td>
@@ -804,7 +804,7 @@
                 <td>Görülmeye Değer Yerler, Kültür, Alışveriş</td>
             </tr>
         </table>
-        <h4 class="mt-5">İstanbul ve çevresinde sevilen yerler</h4>
+        <h4 class="mt-5">{{city.cityname}} ve çevresinde sevilen yerler</h4>
         <div class="row">
           <div class="col-lg-4 col-12 ">
             <div class="location d-flex justify-content-between   mt-2">
@@ -918,7 +918,7 @@
      <!-- ********************section4******************************************************** -->
      <section  class="section4 mt-4" >
       <div class="container">
-        <h3>En iyi İstanbul otelleri ve konaklama tesisleri</h3>
+        <h3>En iyi {{city.cityname}}otelleri ve konaklama tesisleri</h3>
         <div class="row">
           <div class="col-1 ">
             <button id="customPrevBtn1" class="customBtn "><i class="fa-solid fa-chevron-left"></i></button>
