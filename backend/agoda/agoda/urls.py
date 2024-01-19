@@ -23,13 +23,16 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("city/",city,name="city"),
+    path("city/<Cityİd>",city,name="city"),
     path("login/",login_user,name="login"),
     path("register/",register,name="register"),
     path("endyear/", endyearPage, name="endyear"),
+    path("", index, name="index"),
     path("detay/<Cardid>",detail,name="detay"),
     path("userprofile/",userProfile,name="userprofile"),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('cancel_reservation/<int:reservation_id>/', cancel_reservation, name='cancel_reservation'),
     path('delete_comment/<int:comid>/', delete_comments, name='delete_comments'),
+    path("logout/",logoutuser,name="logoutuser"),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

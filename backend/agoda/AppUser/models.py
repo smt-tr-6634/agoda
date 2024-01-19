@@ -31,4 +31,4 @@ class Deletereservation(models.Model):
     person = models.IntegerField()
 
     def __str__(self):
-        return f"{self.user.username} - {self.hotel.hotelname} - {self.date}"
+        return f"{self.user.username} - {self.hotel.hotelname} - {self.date}"    

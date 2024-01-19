@@ -1,0 +1,475 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<style>
+      
+  :root {
+    --textcolor: rgb(42, 42, 46);
+    --text-hovercolor: rgb(83, 146, 249);
+    --iconcolor: #333;
+    --backroundblue: #20274d;
+    --text-detail-color: #737373;
+    --acordion-color:#ececec;
+  }
+  body {
+    font-family: "Open Sans", sans-serif;
+  
+  }
+
+ 
+  
+  .dropdown-toggle::after {
+    display: none;
+  }
+  .dropdown-toggle {
+    padding: 0%;
+  }
+  
+ 
+  
+  /***************** section1 **************************/
+  .section1 {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('{% static "img/abdulsamet/BLT_DT.png" %}');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+  .row-searchs {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 3px;
+
+    
+
+    
+  }
+ 
+  .row-no-padding {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  .row-no-padding [class^="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .row-searchs .dropdown .btn {
+    background-color: white;
+    padding: 1rem;
+    color: var(--textcolor);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .src{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    
+  }
+  .vertical-line {
+    border: 0;
+    border-left: 1px solid #000; /* Çizgi rengi */
+    height: 100%;
+    margin: 0 10px; /* İki öğe arasındaki boşluğu ayarlamak için */
+  }
+  
+  .btn-with-line {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-divider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .custom-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px solid #000; /* Çizgi rengi ve kalınlığı */
+    transform: translateX(-50%);
+  }
+  
+  /* dropdonw menü */
+  .dropdown-menu-item {
+    padding: 0%;
+    overflow: hidden;
+  }
+  .dropdown-menu-item a {
+    color: var(--textcolor);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px;
+  }
+  .dropdown-menu-item a:hover {
+    color: white;
+    background-color: var(--text-hovercolor);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px;
+  }
+  .dropdown-menu-item a:hover + .fa-solid {
+    color: white;
+  }
+  /***************** section1 finish **************************/
+  
+  /* sticky       */
+  
+
+  .owl{
+    position: relative;
+  }
+  .btn-next{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    background-color: white;
+    opacity: 0.8;
+    transform: translateX(10%);
+    border: none;
+    border-radius: 50%;
+    transition: ease 0.5s;
+  }
+  .btn-next:hover{
+    opacity: 1;
+    transition: ease 0.5s;
+  }
+  .btn-prew{
+    position: absolute;
+    top: 40%;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    background-color: white;
+    opacity: 0.8;
+    transform: translateX(-10%);
+    border: none;
+    border-radius: 50%;
+    transition: ease 0.5s;
+  }
+  .btn-prew:hover{
+    opacity: 1;
+    transition: ease 0.5s;
+  }
+  .items{
+    position: relative;
+    overflow: hidden;
+  }
+  .item-text{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 999;
+    left: 15%;
+    top: 40%;
+
+  }
+  .item-text span{
+    font-size: 25px;
+  }
+ 
+  .card{
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .card img{
+    transition: ease 0.5s;
+  }
+  .card p{
+    position: absolute;
+    background-color: #000;
+    color: white;
+    width: 100%;
+    padding: 3px;
+    margin: 0%;
+    bottom: 0;
+    padding-left: 3%;
+  }
+  .card:hover img{
+    transform: scale(1.1);
+    transition: ease 0.5s;
+  }
+  .card:hover p{
+    background-color: var(--backroundblue);
+    transition: ease 0.5s;
+  }
+</style>
+{% endblock css %}
+{% block body %}
+
+<section class="section1">
+    <div class="container search text-center w-100">
+      <h1> Türkiye konumunda en iyi oteli agoda ile bul</h1>
+      <p>Toplam 13440 kiralık mülk ve otel mevcut</p>
+      <div class="src d-flex justify-content-center  ">
+        <div class="row p-3 row-searchs w-75 ">
+       
+          <div class="col-12 col-lg-10  d-in">
+            <div class="row">
+              <div class="col- col-lg-4">
+                <div class="dropdown w-100">
+                  <button
+                    class="btn text-start btn-secondary dropdown-toggle w-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i
+                      class="fa-solid fa-magnifying-glass me-3"
+                      style="color: #2a2a40"
+                    ></i>
+                    İstanbul
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-item w-100">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="fa-solid fa-clock me-3"></i
+                        >İstanbul,Türkiye</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="fa-solid fa-location-dot me-3"></i>Kara
+                        Burnu</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="fa-solid fa-location-dot me-3"></i>Kadıköy</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 mt-2 mb-2 mb-lg-0 mt-lg-0">
+                <div class="dropdown w-100">
+                  <button
+                    class="btn btn-secondary dropdown-toggle w-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div class="custom-divider d-flex justify-content-between">
+                      <div class="div">
+                        <i
+                          class="fa-solid fa-right-to-bracket"
+                          style="color: #000003"
+                        ></i>
+                        Giriş Tarihi
+                      </div>
+                      <div class="div">
+                        <i
+                          class="fa-solid fa-right-to-bracket"
+                          style="color: #000003"
+                        ></i>
+                        Çıkış Tarihi
+                      </div>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu w-100">
+                    <li>
+                      <div class="calendar-container">
+                        <input
+                          type="text"
+                          class="form-control datepicker"
+                          placeholder="Select a date"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="dropdown w-100">
+                  <button
+                    class="btn text-start btn-secondary dropdown-toggle w-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i
+                      class="fa-solid fa-magnifying-glass me-3"
+                      style="color: #2a2a40"
+                    ></i>
+                    İstanbul
+                  </button>
+                  <ul class="dropdown-menu w-100">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-lg-2 mt-2 mt-lg-0">
+            <button class="btn w-100 h-100 btn-primary">Ara</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section2 mt-5 pt-3">
+    <div class="container mt-5 pt-5">
+    <h3 class="text-center">Türkiyedeki Popüler Şehirler</h3>
+    <div class="owl mt-5">
+      <div class="owl-carousel owl-theme owl-index" id="owl-index-1">
+        {% for i in city %}
+          
+        <div class="item items">
+          <a href="/city/{{i.id}}">
+            <div class="card ">
+              <img src="{{i.cityimage.url}}"  class="img-fluid" style="height: 270px;" alt="">
+              <p  class="item-p"> {{i.cityname}} </p>
+  
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+     
+      
+        
+    </div>
+    <button  id="owl-index-prev1" class="btn-prew" ><i class="fa-solid fa-chevron-right fa-flip-vertical"></i></button>
+    <button   id="owl-index-next1" class="btn-next" ><i class="fa-solid fa-chevron-right fa-flip-horizontal"></i></button>
+    </div>
+    </div>
+  </section>
+  <section class="section3 mt-5 pt-3">
+    <div class="container mt-5 pt-5">
+    <h3 class="text-center">İndirim Fırsatları</h3>
+  
+    <div class="owl mt-5">
+      <div class="owl-carousel owl-theme owl-index2" id="owl-index-2" >
+       
+        <a href="/endyear">
+          <div class="item items"  >
+            <div class="card" style="height: 170px;">
+              <img src="{% static 'kupon/en-us (1).png' %}"  class="img-fluid h-100 " alt="">
+            </div>
+          
+          </div>
+        </a>
+        <a href="/endyear">
+          <div class="item items"  >
+            <div class="card" style="height: 170px;">
+              <img src="{% static 'kupon/en-us.png' %}"  class="img-fluid h-100 " alt="">
+            </div>
+          
+          </div>
+        </a>
+        <a href="/endyear">
+          <div class="item items"  >
+            <div class="card" style="height: 170px;">
+              <img src="{% static 'kupon/tr-tr (2).png' %}"  class="img-fluid h-100 " alt="">
+            </div>
+          
+          </div>
+        </a>
+        <a href="/endyear">
+          <div class="item items"  >
+            <div class="card" style="height: 170px;">
+              <img src="{% static 'kupon/tr-tr.png' %}"  class="img-fluid h-100 " alt="">
+            </div>
+            
+          </div>
+        </a>
+      
+       
+      
+      
+        
+    </div>
+    <button  id="owl-index-prev2" class="btn-prew" ><i class="fa-solid fa-chevron-right fa-flip-vertical"></i></button>
+    <button   id="owl-index-next2" class="btn-next" ><i class="fa-solid fa-chevron-right fa-flip-horizontal"></i></button>
+    </div>
+    </div>
+  </section>
+ 
+    {% block js %}
+     <script>
+       // index sayfası courosel
+  $(".owl-index").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+  });
+ 
+  $("#owl-index-prev1").click(function () {
+    $("#owl-index-1").trigger("next.owl.carousel");
+  });
+
+  $("#owl-index-next1").click(function () {
+    $("#owl-index-1").trigger("prev.owl.carousel");
+  });
+
+
+  $('.owl-index-2').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+  
+  $("#owl-index-prev2").click(function () {
+    $("#owl-index-2").trigger("next.owl.carousel");
+  });
+  $("#owl-index-next2").click(function () {
+    $("#owl-index-2").trigger("prev.owl.carousel");
+  });
+  
+  // index sayfası courosel finish
+     </script>
+    {% endblock js %}
+     
+     
+      
+    
+  
+{% endblock body %}

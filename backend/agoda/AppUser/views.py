@@ -35,7 +35,7 @@ def login_user(request):
             
             if user is not None:
                 login(request,user)
-                return redirect("/city")
+                return redirect("/")
             else:
                 hata="Kullanıcı adı yada şifre hatalı"
                 context={"hata":hata}
@@ -45,7 +45,7 @@ def login_user(request):
          
             if user is not None:
                 login(request,user)
-                return redirect("/city")
+                return redirect("/")
             else:
                 hata="Telefon Numarası yada şifre hatalı"
                 context={"hata":hata}
@@ -96,7 +96,9 @@ def register(request):
     context={}
 
     return render(request,"user/register.html",context)
-
+def logoutuser(request): #*kullanıcı çıkış yapma
+    logout(request)
+    return redirect("/")
 
 def userProfile(request):
     user=User.objects.get(id=request.user.id)
@@ -133,7 +135,6 @@ def userProfile(request):
     context={"userinfos":userinfos, "basket":basket,"cancel_reservations":cancel_reservations,"comments":comments}
 
     return render(request,"user/userprofile.html",context)
-
 def cancel_reservation(request, reservation_id):
     try:
         reservation = baskets.objects.get(id=reservation_id)

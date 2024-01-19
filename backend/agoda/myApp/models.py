@@ -4,9 +4,19 @@ from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Coupon(models.Model):
+    titile=models.IntegerField(("İndirim Oranı giriniz"),null=True,blank=True)
+
+class City(models.Model):
+    cityname=models.CharField(("Şehir İsmi"), max_length=50,null=True,blank=True)
+    cityimage=models.ImageField(("Şehir Resmi"), upload_to=None, height_field=None, width_field=None, max_length=None)
+    content = RichTextField(null=True,blank=True)
+    def __str__(self):
+        return self.cityname
 
 
 class hotel(models.Model):
+    city=models.ForeignKey(City, verbose_name=("Şehir"), on_delete=models.CASCADE,null=True,blank=True)
     mainimg=models.ImageField(("Anaresim"),upload_to="Anaresim",  max_length=None, blank=True,null=False )
     hotelname=models.CharField(("Otel adı"), max_length=50,null=True,blank=True)
     hoteltitle=models.TextField(("Otel başlık"),max_length=500,null=True,blank=True)

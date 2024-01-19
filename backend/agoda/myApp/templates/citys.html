@@ -15,22 +15,7 @@
       font-family: "Open Sans", sans-serif;
       
     }
-    /* navbar */
-    .navbar-nav .nav-item a {
-      color: var(--textcolor);
-      font-weight: 700;
-      font-size: 13px;
-      padding: 0px;
-      margin-left: 15px;
-    }
-    .nav-item {
-      align-self: center;
-    }
-    .navbar-nav .nav-item a:hover {
-      color: var(--text-hovercolor);
-      font-weight: 700;
-    }
-    
+   
     .icondrop {
       background-color: white;
       border: none;
@@ -71,8 +56,7 @@
       width: 100%;
       height: 100vh;
       display: flex;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                          url('{% static "img/abdulsamet/1_14932_02.jpg" %}');
+      background-image: url({{city.cityimage.url}});
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -471,7 +455,10 @@
     }
     
     
-    
+    .content h3{
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
     @media (max-width: 1020px) {
       .fixed-top {
         display: none;
@@ -486,84 +473,7 @@
 {% endblock css %}
 {% block body %}
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg border">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg"
-            width="89"
-            height="37"
-            alt=""
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Konaklama</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Uçuşlar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"
-                >Havaalanı Tranferleri</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"
-                >Kuponlar ve Fırsatlar</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Apartlar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"> </a>
-            </li>
-            <div class="dropdown icondrop">
-              <a
-                class="btn dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="fa-solid fa-ellipsis" style="color: #2a2a2e"></i>
-              </a>
-
-              <ul class="dropdown-menu icondrop-menu">
-                <li><a class="dropdown-item" href="#">Apartlar</a></li>
-                <li><a class="dropdown-item" href="#">Araç Kiralama</a></li>
-              </ul>
-            </div>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <img
-               
-                src="{% static 'img/abdulsamet/Wikipedia-Flags-TR-Turkey-Flag.512.png' %}"
-                width="24"
-                height="18"
-                alt=""
-              />
-              <a href="">Tl</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  
     <!-- ********************section 1******************************************************** -->
     <section class="section1">
       <div class="container search text-center w-100">
@@ -748,7 +658,6 @@
          <div class="card-container">
           
           {% for i in hotel_data %}
-          <span>indiirm oroanı:  </span>
           <div class="card  mb-3   " data-price="{{i.hotel.price}}"                        data-rating="{{i.hotel.rating}}" data-star="{{i.hotel.star}}"  >  
             <div class="row g-0">
               <div class=" col-lg-4 col-md-12 p-0 p-2 ">
@@ -1689,34 +1598,8 @@
     <!-- ********************section7******************************************************** -->
     <section class="section7 mt-5 pt-5" >
      <div class="container  ">
-      <h3>İstanbul hakkında daha fazla bilgi</h3>
       <div class="content mt-5">
-        <h4>İstanbul: Gezilecek Yerler ve Eğlenceli Bilgiler</h4>
-        <p>İstanbul, Türkiye'nin en büyük ve en renkli şehirlerinden biridir. Şehir, tarihi ve kültürel mirası, muhteşem manzaraları, lezzetli yemekleri ve canlı gece hayatı ile ünlüdür. İstanbul, hem Asya hem de Avrupa kıtalarında yer almasıyla da dikkat çekmektedir. İstanbul'da gezilecek birçok yer vardır ve her yıl milyonlarca turist bu güzel şehri ziyaret etmektedir.</p>
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul'da konaklama seçenekleri oldukça fazladır.</h4>
-        <p>Şehirde, her bütçeye uygun oteller ve konaklama yerleri bulunmaktadır. Agoda.com, İstanbul'da konaklama seçenekleri için en iyi seçenekler sunmaktadır. Glamour Hotel Istanbul Sirkeci, White House Hotel Istanbul, 10 Karakoy Istanbul, Agora Guesthouse, Hotel The Public - Special Category gibi birçok otel, Agoda.com'da uygun fiyatlarla rezerve edilebilir..</p> 
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul'a Nasıl Gidilir? Ulaşım Seçenekleri</h4>
-        <p>İstanbul'a gitmek için birçok ulaşım seçeneği mevcuttur. Şehirde, iki büyük havaalanı, Atatürk Havalimanı ve Sabiha Gökçen Havalimanı bulunmaktadır. Havaalanlarından şehir merkezine ulaşmak için taksi, otobüs ve metro gibi ulaşım seçenekleri mevcuttur. Bunun yanı sıra, İstanbul'a trenle de ulaşmak mümkündür. Şehirde, birçok metro, tramvay, otobüs ve dolmuş hattı da bulunmaktadır.</p>
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul'da En İyi Zaman Ne Zaman? İdeal Ziyaret Tarihi</h4>
-        <p>İstanbul'da en iyi zaman, Nisan-Mayıs ve Eylül-Ekim ayları arasındadır. Bu aylarda hava sıcaklığı ılıman ve turist yoğunluğu daha azdır. Yaz aylarında, özellikle Temmuz ve Ağustos aylarında, hava sıcaklığı oldukça yüksektir ve turist yoğunluğu da artmaktadır. Kış aylarında ise hava soğuk ve yağışlı olabilir, ancak yine de İstanbul'da gezilecek birçok yer vardır.</p>
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul'da Kalınacak En İyi Yerler</h4>
-        <p>İstanbul'da kalınacak en iyi yerler arasında, Sultanahmet, Taksim, Beşiktaş ve Kadıköy gibi merkezi semtler yer almaktadır. Bu semtler, turistlerin ilgisini çeken yerlere yakın ve ulaşım seçenekleri açısından da avantajlıdır. Glamour Hotel Istanbul Sirkeci, White House Hotel Istanbul, 10 Karakoy Istanbul, Agora Guesthouse, Hotel The Public - Special Category gibi oteller, bu semtlerde bulunmaktadır ve Agoda.com'da uygun fiyatlarla rezerve edilebilir.</p>
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul'da Yenilecek Lezzetler ve Restoran Önerileri</h4>
-        <p>İstanbul, lezzetli yemekleriyle ünlü bir şehirdir. Türk mutfağından dünya mutfağına kadar birçok farklı lezzet İstanbul'da bulunmaktadır. Şehirde, balık restoranları, kebapçılar, meyhaneler ve kafeler gibi birçok farklı yeme-içme seçeneği mevcuttur. Özellikle balık restoranları, Boğaziçi manzarası eşliğinde lezzetli yemekler sunmaktadır. İstanbul'da denemeniz gereken lezzetler arasında kebap, baklava, döner, balık ve Türk kahvesi gibi yemekler bulunmaktadır.</p>
-      </div>
-      <div class="content mt-5">
-        <h4>İstanbul Gezisi İçin Seyahat Tüyoları</h4>
-        <p>İstanbul'da gezilecek yerler için en iyi rota, Sultanahmet'ten başlayarak Ayasofya Müzesi, Topkapı Sarayı, Sultanahmet Camii ve Kapalıçarşı gibi yerleri ziyaret etmek olabilir. Daha sonra, Boğaziçi'nde tekne turu yapabilir ve Galata Kulesi'nde İstanbul manzarasını izleyebilirsiniz. Taksim Meydanı'nda alışveriş yapmak ve İstanbul'un lezzetli yemeklerini tatmak da gezilecek diğer yerler arasındadır.</p>
+        {{city.content | safe}}
       </div>
      
      </div>

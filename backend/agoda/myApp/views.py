@@ -1,16 +1,21 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect,get_object_or_404
 from.models import*
 
 from AppUser.models import*
 
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.contrib.auth.models import User
 
+def index(request):
+    city=City.objects.all()
+    context={
+        "city":city,
+    }
+    return render(request,"index.html",context)
 
-
-def city(request):
-    hotels = hotel.objects.all()
+def city(request,Cityİd):
+    city=City.objects.get(id=Cityİd)
+    hotels = hotel.objects.filter(city=city)
 
     hotel_data = []
     for h in hotels:
@@ -18,7 +23,7 @@ def city(request):
         comments = comment.objects.filter(hotelscom=h).order_by("-date").first()
         hotel_data.append({"hotel": h, "images": imgs, "latest_comments": comments})
 
-    context = {"hotel_data": hotel_data}
+    context = {"hotel_data": hotel_data ,"city":city}
     
     return render(request, "citys.html", context)
 
@@ -51,11 +56,15 @@ def detail(request,Cardid):
             person=request.POST.get("person")
             dates=request.POST.get("date")
             
+
             if hotels.discounted_price is not None and hotels.discounted_price > 0:
                total_price = int(person) * hotels.discounted_price
             else:
-               total_price = int(person) * hotels.price
+              total_price = int(person) * hotels.price
             bask = baskets(user=request.user, hotel=hotels, total_price=total_price ,date=dates,person=person)
+            bask.save()
+
+
             bask.save()
             
     context = {"hotels": hotels ,"imgs":imgs ,"comments":comments }
@@ -64,16 +73,30 @@ def detail(request,Cardid):
 
 
 
-def endyearPage(request):
+# def endyearPage(request,Couponİd):
     
-     hotels = hotel.objects.all()
+#      hotels = hotel.objects.get()
     
     
-     hotel_data = []
-     for h in hotels:
+#      hotel_data = []
+#      for h in hotels:
+#         imgs = AdditionalImage.objects.filter(hotels=h)
+#         hotel_data.append({"hotel": h, "images": imgs})
+
+#      context = {"hotel_data": hotel_data}
+    
+#      return render(request, "endyear.html", context)  
+def endyearPage(request, ):
+    # Tıklanan kuponun id'sine göre kupon nesnesini al
+
+    # Kupon indirim oranından yüksek veya eşit olan otelleri getir
+    hotels = hotel.objects.all()
+
+    hotel_data = []
+    for h in hotels:
         imgs = AdditionalImage.objects.filter(hotels=h)
         hotel_data.append({"hotel": h, "images": imgs})
 
-     context = {"hotel_data": hotel_data}
+    context = {"hotel_data": hotel_data, }
     
-     return render(request, "endyear.html", context)  
+    return render(request, "endyear.html", context)

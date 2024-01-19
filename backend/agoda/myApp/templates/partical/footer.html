@@ -1,1 +1,121 @@
-footer
+{% load static %}
+<style>
+    :root {
+        --textcolor: rgb(42, 42, 46);
+        --text-hovercolor: rgb(83, 146, 249);
+        --iconcolor: #333;
+        --backroundblue: #20274d;
+        --text-detail-color: #737373;
+        --acordion-color:#ececec;
+      }
+      footer{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    .footer1{
+        width: 100%;
+       
+        background-color: rgb(233, 235, 238) ;
+    }
+    .footer-text{
+        cursor: pointer;
+        font-size: 13px;
+    }
+    .footer-text:hover{
+        text-decoration: underline;
+    }
+    p{
+        margin: 0;
+        margin-top: 3px;
+
+    }
+    .footer2{
+        width: 100%;
+        background-color: rgb(42, 42, 46);
+
+    }
+    .footer2 p{
+        color: var(--text-detail-color);
+        font-size: 15px;
+    }
+    .footer2 img{
+       height: 50px;
+       width: 100%;
+       border-radius: 15px;
+      
+       
+    }
+
+</style>
+
+<footer class="mt-5  footer1">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg col-md-6 mt-lg-0  mt-4 col-sm-12">
+                <h5 class="fw-bold" >Yardım</h5>
+                <p class="footer-text">Yardım merkezi</p>
+                <p class="footer-text">SSS</p>
+                <p class="footer-text">Gizlilik Politikası</p>
+                <p class="footer-text">Kullanım Koşulları</p>
+                <p class="footer-text">Çerez ayarlarını yönet</p>
+            </div>
+            <div class="col-lg col-md-6 mt-lg-0  mt-4 col-sm-12">
+                <h5 class="fw-bold" >Şirket</h5>
+                <p class="footer-text">Hakkımızda</p>
+                <p class="footer-text">Kariyer</p>
+                <p class="footer-text">Basın</p>
+                <p class="footer-text">Blog</p>
+                <p class="footer-text">PointsMAX</p>
+            </div>
+            <div class="col-lg col-md-6 mt-lg-0  mt-4 col-sm-12">
+                <h5 class="fw-bold" >Gidilecek Yerler</h5>
+                <p class="footer-text">Şehirler</p>
+                <p class="footer-text">Ülkeler</p>
+               
+            </div>
+            <div class="col-lg col-md-6 mt-lg-0  mt-4 col-sm-12">
+                <h5 class="fw-bold" >İş Oratağımız Olun</h5>
+                <p class="footer-text">YCS iş ortağı portalı</p>
+                <p class="footer-text">Partner Hub</p>
+                <p class="footer-text">Agoda sitesinde kendinizi tanıtın</p>
+                <p class="footer-text">Ortaklar</p>
+                <p class="footer-text">Bağlantı iş ortakları</p>
+               
+            </div>
+            <div class="col-lg col-md-6 mt-lg-0  mt-4 col-sm-12">
+                <h5 class="fw-bold" >Uygulamayı İndirin</h5>
+                <p class="footer-text">iOS uygulaması</p>
+                <p class="footer-text">Android uygulaması</p>
+              
+               
+            </div>
+         
+        </div>
+    </div>
+</footer>
+<footer class="footer2 text-center ">
+    <p>Burada yer alan tüm materyaller © 2005 – 2023 Agoda Company Pte. Ltd.ye aittir. Tüm hakları saklıdır</p>
+    <p>Agoda, seyahat ve ilgili hizmetlerde dünya lideri Booking Holdings Inc. şirketinin bir parçasıdır.</p>
+ <div class="container mt-5">
+    <div class="row">
+        <div class="col-lg col-md-3-col-sm-6 mt-lg-0 mt-4 p-5">
+            <img src="{% static 'logo/Agoda-1-02-02-1920x561.png' %}"   class="img-fluid" alt="">
+        </div>
+        <div class="col-lg col-md-3-col-sm-6 mt-lg-0 mt-4 p-5">
+            <img src="{% static 'logo/252_booking_logo.png' %}"   class="img-fluid" alt="">
+        </div>
+        
+        <div class="col-lg col-md-3-col-sm-6 mt-lg-0 mt-4 p-5">
+            <img src="{% static 'logo/opentable.png' %}"   class="img-fluid" alt="">
+        </div>
+       
+        <div class="col-lg col-md-3-col-sm-6 mt-lg-0 mt-4 p-5">
+            <img src="{% static 'logo/rentalcarscom2723.png' %}"   class="img-fluid" alt="">
+        </div>
+    </div>
+ </div>
+</footer>
+
+
+
+

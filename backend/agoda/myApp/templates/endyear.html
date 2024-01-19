@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    <title>En az 14 gün önce yapılan rezervasyonlarda maks. %20 indirim</title>
     
     {% block css %}
     <style>
@@ -88,6 +87,22 @@
      .total-price{
       margin-left: 130px; font-size:20px; font-weight:500;
      }
+     .card{
+      position: relative;
+      overflow: hidden;
+     }
+     .card p{
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      background-color: red;
+      margin: 0%;
+      padding: 12px;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 0px 0px 0px 5px;
+     }
      @media (max-width: 515px)
     {.yazı,.kosul{margin-left:40px}}
   </style>
@@ -97,7 +112,7 @@
     {% block body %}
     
       <div class="content-container">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left: 30px;">
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left: 30px;">
               <a class="navbar-brand" href="#"><img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" style="width: 70px;" alt=""></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -141,13 +156,13 @@
                   <button class="btn btn-outline-primary my-2 my-sm-0 text-primary" type="submit">Hesap Oluşturun</button>
                 </form>
               </div>
-            </nav>
+            </nav> -->
                
             <div class="col-12">
              
               <div class="background" style="width:100%;">
                 <img class="yazı" src="https://cdn6.agoda.net/images/WebCampaign/pulse_globalcampaign_endofyearsale/logo.png" style="width:140px;" alt="">
-                <p class="yazı" style="font-size:34px;">Dünya genelinde seçili otellerde ek %15 indirimden<br>faydalanın</p>
+                <p class="yazı" style="font-size:34px;">Dünya genelinde seçili otellerde ek %{{coupon.titile}}indirimden<br>faydalanın</p>
                 <p class="kosul" style="font-size:19px;">Koşullara tabidir</p>
                 
                 
@@ -161,8 +176,8 @@
             </div>
        
             <div class="background-2" style="background-color:#f7f7f7">
-              <div class="container">
-        
+              <div class="container mt-5">
+<!--         
                 <nav class="navbar navbar-expand-lg">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   </button>
@@ -176,120 +191,127 @@
                   </div>
                 </nav>
         
-                <button class="button-2 mb-3" style="color:#5292f9;">Bali</button>
-        
+                <button class="button-2 mb-3" style="color:#5292f9;">Bali</button> -->
+               
               
               
                
         
                     <div class="row">
-                      
-                        {% for i in hotel_data %}
-                        {% if i.hotel.discounted_price is not none %}
-                        <div class="col-xxl-3 mt-3 col-lg-4 col-md-6 col-sm-12">
-                          <a href="">
-                            <div class="card">
-                              <img src="{{i.hotel.mainimg.url}}" class="card-img-top" style="height:180px;" alt="Card image cap">
-                              <div class="card-body">
-                                <div class="hotel-title">
-                                  <span class="hotel-name"> <a href="/detay/{{i.hotel.id}}">{{i.hotel.hotelname}}</a> </span>
+               
+                      {% for i in hotel_data %}
+                        
+                      <div class="col-md-4">
+                        <a href="/detay/{{i.hotel.id}}" style="text-decoration: none;">
+                          <div class="card">
+                            <p> <span>%{{i.hotel.discount}} İndirim</span> </p>
+                            <img src="{{i.hotel.mainimg.url}}" class="card-img-top" style="height:180px;" alt="Card image cap">
+                            <div class="card-body">
+                              <div class="hotel-title">
+                                <span class="hotel-name"> {{i.hotel.hotelname}} </span>
+                              </div>
+                              <span class="text-primary" style="font-size:13px;"> 
+                                <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
+                                {{i.hotel.hotellocation}}
+                              </span>
+                              <div class="rating text-warning" style="font-size: 10px;">
+                                {% if i.hotel.star is not None %}
+                                <div class="star mt-3">
+                                  {% for _ in "x"|rjust:i.hotel.star %}
+                                    <i class="fa-solid fa-star" style="color: #ffa726; font-size: 13px;"></i>
+                                  {% endfor %}
                                 </div>
-                                <span class="text-primary" style="font-size:13px;"> 
-                                  <i class="fa-solid fa-location-dot text-primary" style="margin-left:10px;"></i>
-                                  {{i.hotel.hotellocation}}
-                                </span>
-                                <div class="rating text-warning" style="font-size: 10px;">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                 
-                                    
-                                </div>
-                                <div class="review-information">
-                                  <div class="text">Kusursuz</div>
-                                  <div class="text-secondary">3.095 değerlendirme</div>
-                                </div>
-                                
-                                <div class="information-price text-end">
-                                  <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
-                                  <div class="price-crossout text-secondary"><strike>{{i.hotel.price}}  </strike></div>
-                                  <div class="total-price text-danger">  {{i.hotel.discounted_price}}  </div>
-                                </div>
+                              {% endif %}
+                               
+                                  
+                              </div>
+                              <div class="review-information">
+                                <div class="text">Kusursuz</div>
+                                <div class="text-secondary">3.095 değerlendirme</div>
+                              </div>
+                              
+                              <div class="information-price ">
+                                <div class="night-price text-secondary" style="margin-top:40px;">Gecelik Fiyat</div>
+                                <div class="price-crossout text-secondary"><strike>{{i.hotel.price}}  </strike></div>
+                                <div class="total-price text-danger">  {{i.hotel.discounted_price}}  </div>
                               </div>
                             </div>
-                          </a>
+                          </div>
+                        </a>
                       </div>
                        
-                        {% endif %}
+                       
                       
                         {% endfor %}
-                      
+                
+                       
                         
+                        </div>
+                        <div class="row altyazı mt-5">
+        
+                          <div class="col-2"></div> 
+                         
+                          <div class="col-8">
+                            <h5 style="margin-bottom:30px; text-align:center;">Agoda Yıl Sonu İndirim Promosyonları</h5>
+                            <ol style="font-size:17px; font-weight:470;">
+                              <li>
+                                Promosyon Dönemi:<b style="font-weight: 500;">1-14 Aralık 2023</b>
+                              </li><br>
+                              <li>
+                                Agoda, Promosyon Dönemi boyunca yapılan ve giriş tarihi 28 Şubat 2024 veya öncesinde olan belirli
+                                Agoda rezervasyonları için promosyonlu gecelik fiyatlar <b style="font-weight: 500;">(“Promosyonlu Fiyatlar”)</b>sunmaktadır.
+                                <b style="font-weight: 500;">“Agoda Rezervasyonları” </b>Agoda'nın online rezervasyon platformu üzerinden yapılan rezervasyonları ifade eder.
+                              </li><br>
+                              <li>
+                                Varsa Promosyonlu Fiyatların sunulması tamamen müsaitliğe bağlıdır ve olduğu şekliyle sunulur.
+                              </li><br>
+                              <li>
+                                Bu promosyon koşulları, Agoda kullanıcıları için geçerli olan ve Agoda web sitesinde (www.agoda.com) bulunan
+                                koşulları <b style="font-weight: 500;">(“Kullanım Koşulları”)</b>tamamlar. Agoda'nın haklarını kısıtlamaksızın, Kullanım Koşulları'nda
+                                belirtilen İptal Koşulları tarafınızdan yapılan tüm Promosyonlu Rezervasyonlar için geçerli olacaktır.
+                              </li><br>
+                              <li>
+                                Bu promosyon koşullarındaki muğlaklıklar Agoda'nın yorumladığı şekilde tefsir edilir.
+                              </li><br>
+                              <li>
+                                Agoda kendi takdirine bağlı olarak bu promosyonu herhangi bir zamanda derhal sonlandırabilir.
+                                  Bununla birlikte Agoda, promosyon sonlandırılmadan önce yapılmış olan Promosyonlu Rezervasyonları
+                                  yerine getirmek için elinden gelen ticari çabayı gösterecektir. Aksi yöndeki hükümlere bakılmaksızın
+                                  ve yasaların izin verdiği azami ölçüde, Agoda Promosyonlu Fiyatlar, Promosyonlu Rezervasyonlar, işbu promosyon
+                                  koşulları ve bu belgedeki diğer herhangi bir konu ile ilgili olarak tarafınıza karşı sorumlu değildir.
+                              </li><br>
+                              <li>
+                                Agoda'nın işbu promosyon koşulları ve/veya Kullanım Koşulları ile ilgili hakları mümkün olan en geniş şekilde
+                                  birbirini tamamlayıcı niteliktedir ve Agoda'nın her bir hakkı Agoda'nın diğer haklarını sınırlayıcı, bağlayıcı
+                                    veya başka şekilde olumsuz etkileyici şekilde yorumlanamaz.
+                              </li><br>
+                              <li>
+                                Bu promosyon koşullarının herhangi bir bölümünün geçersiz sayılması halinde, geri kalan kısımlar geçerli kalır
+                                       ve geçersiz olduğu kabul edilen kısım mümkün olan en geniş ölçüde aynı etkiye sahip yeni koşullarla değiştirilir.
+                              </li><br>
+                              <li>
+                                Yaptığınız her bir Promosyonlu Rezervasyona (eğer yaparsanız) bağlı olarak Promosyonlu Fiyat ilave vergilere, harçlara
+                                       ve/veya ücretlere tabi olabilir.
+                              </li><br>
+                              <li>
+                                Agoda promosyon sayfalarında veya grafiklerde sadece bilgi vermek amacıyla vergi hariç fiyatları gösterebilir.
+                                       Her zaman (rezervasyon yapmadan önce bilgilerinizi girebileceğiniz) müşteri bilgileri sayfasında ve ödeme bilgileri
+                                       sayfasında vergi dahil fiyatları kontrol etmelisiniz.
+                              </li><br>
+                              <li>
+                                Promosyonlu Rezervasyon yaparak veya Promosyonlu Fiyattan faydalanarak işbu promosyon koşullarını kabul etmiş ve onaylamış olursunuz.
+                              </li>
+                            </ol>
+                          </div>
+                            
+                          <div class="col-2"></div>
+              
+                        </div>
+                        </div>
                     </div>
                         
                     
-                    <div class="row altyazı mt-5">
-        
-                      <div class="col-2"></div> 
-                     
-                      <div class="col-8">
-                        <h5 style="margin-bottom:30px; text-align:center;">Agoda Yıl Sonu İndirim Promosyonları</h5>
-                        <ol style="font-size:17px; font-weight:470;">
-                          <li>
-                            Promosyon Dönemi:<b style="font-weight: 500;">1-14 Aralık 2023</b>
-                          </li><br>
-                          <li>
-                            Agoda, Promosyon Dönemi boyunca yapılan ve giriş tarihi 28 Şubat 2024 veya öncesinde olan belirli
-                            Agoda rezervasyonları için promosyonlu gecelik fiyatlar <b style="font-weight: 500;">(“Promosyonlu Fiyatlar”)</b>sunmaktadır.
-                            <b style="font-weight: 500;">“Agoda Rezervasyonları” </b>Agoda'nın online rezervasyon platformu üzerinden yapılan rezervasyonları ifade eder.
-                          </li><br>
-                          <li>
-                            Varsa Promosyonlu Fiyatların sunulması tamamen müsaitliğe bağlıdır ve olduğu şekliyle sunulur.
-                          </li><br>
-                          <li>
-                            Bu promosyon koşulları, Agoda kullanıcıları için geçerli olan ve Agoda web sitesinde (www.agoda.com) bulunan
-                            koşulları <b style="font-weight: 500;">(“Kullanım Koşulları”)</b>tamamlar. Agoda'nın haklarını kısıtlamaksızın, Kullanım Koşulları'nda
-                            belirtilen İptal Koşulları tarafınızdan yapılan tüm Promosyonlu Rezervasyonlar için geçerli olacaktır.
-                          </li><br>
-                          <li>
-                            Bu promosyon koşullarındaki muğlaklıklar Agoda'nın yorumladığı şekilde tefsir edilir.
-                          </li><br>
-                          <li>
-                            Agoda kendi takdirine bağlı olarak bu promosyonu herhangi bir zamanda derhal sonlandırabilir.
-                              Bununla birlikte Agoda, promosyon sonlandırılmadan önce yapılmış olan Promosyonlu Rezervasyonları
-                              yerine getirmek için elinden gelen ticari çabayı gösterecektir. Aksi yöndeki hükümlere bakılmaksızın
-                              ve yasaların izin verdiği azami ölçüde, Agoda Promosyonlu Fiyatlar, Promosyonlu Rezervasyonlar, işbu promosyon
-                              koşulları ve bu belgedeki diğer herhangi bir konu ile ilgili olarak tarafınıza karşı sorumlu değildir.
-                          </li><br>
-                          <li>
-                            Agoda'nın işbu promosyon koşulları ve/veya Kullanım Koşulları ile ilgili hakları mümkün olan en geniş şekilde
-                              birbirini tamamlayıcı niteliktedir ve Agoda'nın her bir hakkı Agoda'nın diğer haklarını sınırlayıcı, bağlayıcı
-                                veya başka şekilde olumsuz etkileyici şekilde yorumlanamaz.
-                          </li><br>
-                          <li>
-                            Bu promosyon koşullarının herhangi bir bölümünün geçersiz sayılması halinde, geri kalan kısımlar geçerli kalır
-                                   ve geçersiz olduğu kabul edilen kısım mümkün olan en geniş ölçüde aynı etkiye sahip yeni koşullarla değiştirilir.
-                          </li><br>
-                          <li>
-                            Yaptığınız her bir Promosyonlu Rezervasyona (eğer yaparsanız) bağlı olarak Promosyonlu Fiyat ilave vergilere, harçlara
-                                   ve/veya ücretlere tabi olabilir.
-                          </li><br>
-                          <li>
-                            Agoda promosyon sayfalarında veya grafiklerde sadece bilgi vermek amacıyla vergi hariç fiyatları gösterebilir.
-                                   Her zaman (rezervasyon yapmadan önce bilgilerinizi girebileceğiniz) müşteri bilgileri sayfasında ve ödeme bilgileri
-                                   sayfasında vergi dahil fiyatları kontrol etmelisiniz.
-                          </li><br>
-                          <li>
-                            Promosyonlu Rezervasyon yaparak veya Promosyonlu Fiyattan faydalanarak işbu promosyon koşullarını kabul etmiş ve onaylamış olursunuz.
-                          </li>
-                        </ol>
-                      </div>
-                        
-                      <div class="col-2"></div>
-          
-                    </div>
+                   
       
               </div>
       
